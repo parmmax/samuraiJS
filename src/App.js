@@ -1,26 +1,44 @@
 import React from 'react';
-import logo from './logo.svg';
+import {Route} from "react-router-dom";
 import './App.css';
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import Profile from "./components/Profile/Profile";
+import Dialogs from "./components/Dialogs/Dialogs";
+import Projects from "./components/Projects/Projects";
+import Media from "./components/Media/Media";
+import Settings from "./components/Settings/Settings";
+import Main from "./components/Main/Main";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = (props) => {
+
+    return (
+        <Route path='/' render={() =>
+            <div>
+                <div className="app-wrapper">
+                    <Header/>
+                    <Route path='/home'
+                           render={() => <Main/>}/>
+                    <Route path='/profile'
+                           render={() => <Profile
+                               stateProfile = {props.state.profilePage}
+                               dispatch = {props.dispatch}
+                           />}/>
+                    <Route path='/messages'
+                           render={() => <Dialogs
+                               stateDialogs={props.state.dialogsPage}
+                               dispatch = {props.dispatch}
+                           />}/>
+                    <Route path='/projects'
+                           render={() => <Projects/>}/>
+                    <Route path='/media'
+                           render={() => <Media/>}/>
+                    <Route path='/settings'
+                           render={() => <Settings/>}/>
+                </div>
+                <Footer/>
+            </div>}/>
+    );
 }
 
 export default App;
