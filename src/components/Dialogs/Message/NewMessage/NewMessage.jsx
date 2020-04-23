@@ -32,5 +32,4 @@ const NewMessage = (props) => {
         </div>
     )
 };
-
 export default NewMessage

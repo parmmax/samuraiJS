@@ -1,4 +1,3 @@
-
 .container {
     display: flex;
     flex-flow: column nowrap;
@@ -39,7 +38,6 @@
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     outline: none;
-
 }
     .btnWrap {
         display: flex;

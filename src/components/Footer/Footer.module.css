@@ -8,3 +8,13 @@
     width: 100%;
     height: 70px;
 }
+.footerWrap {
+    background-color: #404044;
+    color: #c0c0c4;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+}
