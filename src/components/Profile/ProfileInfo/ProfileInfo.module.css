@@ -1,0 +1,53 @@
+.profileInfoWrap {
+    padding: 10px 0px 20px 0px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient( rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.9) ), url("img/mountains1920x1080.jpg");
+    /*background-size: auto;*/
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #fff;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.personalInfo{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.avaBox {
+    width: 150px;
+    height: 150px;
+    /*flex: 0 0 300px;*/
+    /*overflow: hidden;*/
+}
+.avatar {
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #ffffff;
+}
+
+.name {
+    font-size: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 5px 0px;
+}
+.first,
+.last {
+    padding-right: 5px;
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

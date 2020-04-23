@@ -1,0 +1,37 @@
+.list{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px 0px;
+    min-width: 120px;
+}
+
+.avatar {
+    width: 60px;
+    border-radius: 50%;
+    border: 5px solid #ffffff;
+    margin-right: 10px;
+}
+
+.link {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+
+}
+
+.active {
+    color: #ef5939;
+    /*color: rgb(26, 113, 186);*/
+    font-weight: 500;
+
+}
+
+.active img {
+    border: 5px solid #ef5939;
+}
+

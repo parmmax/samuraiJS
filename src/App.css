@@ -1,38 +1,68 @@
-.App {
-  text-align: center;
+.colorPallet {
+    color: #18181c;
+    color: #404044;
+    color: #808084;
+    color: #c0c0c4;
+    color: #e6e6ea;
+    color: #ef5939;
+}
+/*  СТИЛИ ОБНУЛЕНИЯ     -------------------------------------------------------
+    в будущем, перенести в отдельный файл   ---------------------------------*/
+
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body, html {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fff;
+    height: 100%;
+    color: #18181c;
+    scroll-behavior: smooth;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a {
+    text-decoration: none;
+    color: #18181c;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+li {
+    list-style: none;
 }
 
-.App-link {
-  color: #61dafb;
+button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+/*  Стили для App.css   -----------------------------------------------------*/
+
+.app-wrapper {
+    margin: 0 auto;
+    padding: 0px 10px;
+    max-width: 1180px;
+    /*display: grid;*/
+    /*grid-template-rows: 70px 1fr;*/
+    /*grid-template-columns: 2fr 10fr;*/
+    /*grid-gap: 0px;*/
+    /*grid-template-areas: "header header" "nav main";*/
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
 }
+
+/*К чему применяется стиль?*/
+/*.app-wrapper-main {*/
+/*    grid-area: main;*/
+/*    background-color: #fff;*/
+/*    padding: 10px;*/
+/*}*/
