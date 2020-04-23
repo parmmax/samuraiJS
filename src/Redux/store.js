@@ -51,17 +51,5 @@ let store = {
 
 };
 
-export const addPostActionCreator = () => ({type: 'ADD_POST'});
-export const updateNewPostTextActionCreator = (newTextFromTextareaNewPost) => ({
-    type: 'UPDATE_NEW_POST_TEXT',
-    newText: newTextFromTextareaNewPost
-});
-
-export const sendMessageCreator = () => ({type: 'SEND_MESSAGE'});
-export const updateNewMessageTextCreator = (newTextFromTextareaNewMessage) => ({
-    type: 'UPDATE_NEW_MESSAGE_TEXT',
-    newTextMessage: newTextFromTextareaNewMessage
-});
-
 export default store;
 window.store = store;

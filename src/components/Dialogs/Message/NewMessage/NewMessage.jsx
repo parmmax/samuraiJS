@@ -1,6 +1,6 @@
 import React from "react";
 import classes from './NewMessage.module.css';
-import {sendMessageCreator, updateNewMessageTextCreator} from "../../../../Redux/state";
+import {sendMessageCreator, updateNewMessageTextCreator} from "../../../../Redux/dialogsReducer";
 
 const NewMessage = (props) => {
     let onSendMessageClick = () => {
