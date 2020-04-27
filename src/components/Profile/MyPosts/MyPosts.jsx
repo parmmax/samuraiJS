@@ -1,29 +1,24 @@
 import React from "react";
 import classes from './MyPosts.module.css';
 import Post from "./Post/Post";
-import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../Redux/profileReducer";
 
 const MyPosts = (props) => {
 
-    let addPost = () => {
-        props.dispatch(addPostActionCreator());
+    let postsElement = props.posts.map(p =>
+        <Post id={p.id}
+              message={p.message}
+              likesCounts={p.likesCounts}
+        />);
+
+    let onAddPost = () => {
+        props.addPost()
     };
 
     let onNewPostChange = (event) => {
+        // let newTextFromTextarea = newPostElement.current.value;
         let newTextFromTextarea = event.target.value;
-        props.dispatch(updateNewPostTextActionCreator(newTextFromTextarea));
+        props.updateNewPostText(newTextFromTextarea);
     };
-
-    // debugger;
-    let postsElement = props.posts.map(p =>
-        <Post
-            id={p.id}
-            message={p.message}
-            likesCounts={p.likesCounts}
-        />);
-
-    // let newPostElement = React.createRef();
-
 
     return (
         <section className={classes.container}>
@@ -32,13 +27,13 @@ const MyPosts = (props) => {
                 <textarea className={classes.newPostArea}
                           cols="30" rows="10"
                           placeholder='Enter your new post'
-                          // ref={newPostElement}
+                    // ref={newPostElement}
                           onChange={onNewPostChange}
                           value={props.newPostText}
 
                 />
                 <div className={classes.btnWrap}>
-                    <button onClick={addPost} className={classes.btnAddPost} type="button">
+                    <button onClick={onAddPost} className={classes.btnAddPost} type="button">
                         Add Post
                     </button>
                 </div>

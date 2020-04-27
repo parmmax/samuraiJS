@@ -63,9 +63,8 @@
             padding: 0px 10px;
         }
 
-            path {
+            .heart path {
                 fill: rgb(239, 89, 57);
-
             }
 
     .btnWrap {

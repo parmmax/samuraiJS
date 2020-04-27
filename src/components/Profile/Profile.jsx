@@ -1,19 +1,17 @@
-
 import React from "react";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
-import MyPosts from './MyPosts/MyPosts';
 import classes from './Profile.module.css';
+import MyPostsContainer from "./MyPosts/MyPostsContainer";
 
 const Profile = (props) => {
 
     // debugger;
     return (
-        <main className = {classes.profileWrap}>
+        <main className={classes.profileWrap}>
             <ProfileInfo/>
-            <MyPosts
-                posts = {props.stateProfile.posts}
-                newText = {props.stateProfile.newPostText}
-                dispatch={props.dispatch}
+            <MyPostsContainer store={props.store}
+                              // newText={props.stateProfile.newPostText}
+                              // dispatch={props.dispatch}
             />
         </main>
     )

@@ -3,13 +3,14 @@ import classes from './NewMessage.module.css';
 import {sendMessageCreator, updateNewMessageTextCreator} from "../../../../Redux/dialogsReducer";
 
 const NewMessage = (props) => {
+
     let onSendMessageClick = () => {
-        props.dispatch(sendMessageCreator())
+        props.onSendMessageClick();
     };
 
     let onNewMessageChange = (event) => {
         let newTextFromTextarea = event.target.value;
-        props.dispatch(updateNewMessageTextCreator(newTextFromTextarea))
+        props.onNewMessageChange(newTextFromTextarea)
     };
 
     return (

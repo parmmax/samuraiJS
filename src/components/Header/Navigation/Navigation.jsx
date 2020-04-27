@@ -18,7 +18,7 @@ const Navigation = () => {
                              to="/settings">Settings</NavLink></li>
             </ul>
 
-            {/*отдельная компонента для регистрации*/}
+
             {/*<NavLink className={classes.link} activeClassName={classes.active}*/}
             {/*         to="/login">Log in</NavLink>*/}
             {/*<NavLink className={classes.link} activeClassName={classes.active}*/}

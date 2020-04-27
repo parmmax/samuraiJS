@@ -24,13 +24,13 @@
 }
 
 .imgLogo {
-  height: 60px;
-  margin: 10px 0px 0px 0px;
+  height: 20px;
+  margin: 0px 0px 0px 0px;
   pointer-events: none;
 }
 
-path {
-  fill: #18181c;
+.imgLogo path {
+  fill: #ef5939;
 }
 
 .penScript {
@@ -44,3 +44,16 @@ path {
 span {
   color: #ef5939;
 }
+
+.singIn {
+  height: 20px;
+  margin: 0 auto;
+  pointer-events: none;
+}
+.singIn path {
+  fill: #808084;
+}
+
+/*.singIn path:hover {*/
+/*  fill: #ef5939;*/
+/*}*/

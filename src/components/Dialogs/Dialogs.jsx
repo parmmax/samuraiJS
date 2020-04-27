@@ -6,8 +6,8 @@ import classes from './Dialogs.module.css';
 
 const Dialogs = (props) => {
 
-    let dialogsElement = props.stateDialogs.dialogs.map(d => <Interlocutor name={d.name} id={d.id}/>);
-    let messagesElement = props.stateDialogs.messages.map(m => <Message message={m.message} id={m.id}/>);
+    let dialogsElement = props.dialogs.map(d => <Interlocutor name={d.name} id={d.id}/>);
+    let messagesElement = props.messages.map(m => <Message message={m.message} id={m.id}/>);
 
     return (
         <div className={classes.wrapper}>
@@ -22,9 +22,9 @@ const Dialogs = (props) => {
                 <div className={classes.message}>
                     {messagesElement}
                 </div>
-                <NewMessage
-                    newTextMessage={props.stateDialogs.newTextMessage}
-                    dispatch={props.dispatch}
+                <NewMessage newTextMessage={props.newTextMessage}
+                            onNewMessageChange={props.onNewMessageChange}
+                            onSendMessageClick={props.onSendMessageClick}
                 />
             </div>
 
