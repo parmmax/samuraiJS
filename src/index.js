@@ -5,26 +5,15 @@ import ReactDOM from 'react-dom';
 import {BrowserRouter} from "react-router-dom";
 import App from './App';
 import './index.css';
+import {Provider} from "react-redux";
 
-let rerenderEntireTree = (state) => {
+ReactDOM.render(
+    <BrowserRouter>
+        <Provider store={store}>
+            <App/>
+        </Provider>
+    </BrowserRouter>, document.getElementById('root'));
 
-    // debugger;
-
-    ReactDOM.render(
-        <BrowserRouter>
-            <App store={store}
-                 // state={state}
-                 // dispatch={store.dispatch.bind(store)}
-            />
-        </BrowserRouter>, document.getElementById('root'));
-};
-
-rerenderEntireTree(store.getState());
-
-store.subscribe(() => {
-    let state = store.getState();
-    rerenderEntireTree(state);
-});
 
 //==================================================================================
 // импорт наш стор и сделай все по аналогии из 43 урока!

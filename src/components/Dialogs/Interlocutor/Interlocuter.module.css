@@ -11,8 +11,9 @@
 .avatar {
     width: 60px;
     border-radius: 50%;
-    border: 5px solid #ffffff;
+    border: 3px solid #ffffff;
     margin-right: 10px;
+    transition: 0.7s all;
 }
 
 .link {
@@ -21,17 +22,18 @@
     justify-content: space-between;
     align-items: center;
     text-align: center;
+    transition: 0.7s all;
 
 }
 
 .active {
     color: #ef5939;
     /*color: rgb(26, 113, 186);*/
-    font-weight: 500;
+    /*font-weight: 500;*/
 
 }
 
 .active img {
-    border: 5px solid #ef5939;
+    border: 3px solid #ef5939;
 }
 
