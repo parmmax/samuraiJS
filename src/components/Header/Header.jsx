@@ -17,7 +17,7 @@ const Header = () => {
 
 
                 {/*отдельная компонента для регистрации*/}
-                <div>
+                <div className={classes.singInWrapper}>
                     <div>
                         <NavLink to='/singIn'>
                             <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sign-in-alt"

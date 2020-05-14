@@ -1,6 +1,13 @@
 .wrapper {
-    margin: 0 auto;
+    margin: 70px 0px 0px 0px;
+    padding: 20px 10px 10px 10px;
+    width: 100%;
 }
-.wrapper {
-    margin: 0 auto;
+
+.wrapper h4 {
+    text-align: center;
+    padding: 10px 0px;
+    font-family: 'Great Vibes', cursive;
+    text-transform: capitalize;
+    font-size: 32px;
 }

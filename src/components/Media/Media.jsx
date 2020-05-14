@@ -4,7 +4,7 @@ import classes from './Media.module.css';
 const Media = () => {
     return (
         <div className={classes.wrapper}>
-            <h3>Media</h3>
+            <h4>Media</h4>
         </div>
     )
 };

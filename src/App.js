@@ -43,7 +43,7 @@ const App = (props) => {
                     {/*<Route path='/singIn'*/}
                     {/*       render={() => <SingIn/>}/>*/}
                 </div>
-                <Footer/>
+                {/*<Footer/>*/}
             </div>}/>
     );
 };

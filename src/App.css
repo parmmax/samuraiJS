@@ -8,6 +8,7 @@
 }
 /*  СТИЛИ ОБНУЛЕНИЯ     -------------------------------------------------------
     в будущем, перенести в отдельный файл   ---------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 
 *, *:before, *:after {
     margin: 0;
@@ -47,8 +48,6 @@ button {
 
 .app-wrapper {
     margin: 0 auto;
-    padding: 0px 10px;
-    max-width: 1180px;
     /*display: grid;*/
     /*grid-template-rows: 70px 1fr;*/
     /*grid-template-columns: 2fr 10fr;*/

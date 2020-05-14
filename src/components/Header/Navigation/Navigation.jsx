@@ -8,13 +8,13 @@ const Navigation = () => {
             <ul className={classes.list}>
                 <li><NavLink className={classes.link}
                              activeClassName={classes.active}
+                             to="/users">Users</NavLink></li>
+                <li><NavLink className={classes.link}
+                             activeClassName={classes.active}
                              to="/profile">Profile</NavLink></li>
                 <li><NavLink className={classes.link}
                              activeClassName={classes.active}
                              to="/messages">Messages</NavLink></li>
-                <li><NavLink className={classes.link}
-                             activeClassName={classes.active}
-                             to="/users">Users</NavLink></li>
                 <li><NavLink className={classes.link}
                              activeClassName={classes.active}
                     to="/projects">Projects</NavLink></li>
