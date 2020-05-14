@@ -9,8 +9,12 @@ const Main = (props) => {
                 <h1>pen<span>S</span>cript</h1>
             </div>
             <div className={classes.title2}>
-                <h3>The project was created using</h3>
-                <h3>React-Redux</h3>
+                <h3>sponsored by YouTube channel</h3>
+                <h3>It-Kamasutra</h3>
+            </div>
+            <div className={classes.author}>
+                <div>Created by</div>
+                <div>Maxim Parmakly</div>
             </div>
         </div>
     )
