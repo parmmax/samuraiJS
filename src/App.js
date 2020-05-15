@@ -9,7 +9,7 @@ import Projects from "./components/Projects/Projects";
 import Media from "./components/Media/Media";
 import Settings from "./components/Settings/Settings";
 import Main from "./components/Main/Main";
-import Users from "./components/Users/Users";
+import UsersContainer from "./components/Users/UsersContainer";
 
 const App = (props) => {
 
@@ -39,7 +39,7 @@ const App = (props) => {
                            render={() => <Settings/>} />
 
                     <Route path='/users'
-                           render={() => <Users/>} />
+                           render={() => <UsersContainer />} />
                     {/*<Route path='/singIn'*/}
                     {/*       render={() => <SingIn/>}/>*/}
                 </div>
