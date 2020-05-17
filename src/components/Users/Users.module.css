@@ -2,6 +2,7 @@
     width: 100%;
     margin: 70px 0px 0px 0px;
     padding: 20px 10px 10px 10px;
+    background: #e2e8f0;
 }
 
 .wrapper h4 {
@@ -10,4 +11,87 @@
     font-family: 'Great Vibes', cursive;
     text-transform: capitalize;
     font-size: 32px;
+}
+
+
+.uContainer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 720px;
+    margin: 0 auto 10px auto;
+    /*border: 1px solid #fff;*/
+    box-shadow: 0px 1px 20px #808084;
+    border-radius: 10px;
+    transition: 0.5s all;
+}
+.uContainer:hover {
+    /*box-shadow: 0px 1px 5px #808084;*/
+}
+
+
+.uAbout {
+    flex: 3;
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 10px;
+}
+
+.uAbout img {
+    width: 60px;
+}
+.uAboutInfo {
+    padding-left: 20px;
+}
+
+
+.uFollow {
+    flex: 1;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+.btnUnFollow {
+    margin: 0px 5px;
+    padding: 5px 5px;
+    width: 72px;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border: 1px solid #ef5939;
+    border-radius: 20px;
+    background-color: #ffffff;
+    color: #ef5939;
+    box-shadow: 0px 1px 20px #808084;
+    transition: 0.5s all;
+}
+    .btnUnFollow:hover {
+        border: 1px solid #ef5939;
+        box-shadow: 0px 1px 5px #808084;
+        background-color: #ef5939;
+        color: #ffffff;
+    }
+.btnFollow {
+    margin: 0px 5px;
+    padding: 5px 5px;
+    width: 72px;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border: 1px solid #ef5939;
+    border-radius: 20px;
+    background-color: #ef5939;
+    color: #ffffff;
+    box-shadow: 0px 1px 20px #808084;
+    transition: 0.5s all;
+}
+    .btnFollow:hover {
+    border: 1px solid #ef5939;
+    box-shadow: 0px 1px 5px #808084;
+    background-color: #ffffff;
+    color: #ef5939;
 }

@@ -73,5 +73,5 @@
     align-items: flex-end;
     width: 100%;
     padding: 10px 10px 0px 10px;
-    text-transform: capitalize;
+    text-transform: inherit;
 }
