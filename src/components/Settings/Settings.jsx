@@ -1,11 +1,8 @@
-
 import React from 'react';
-import classes from "../Users/Users.module.css";
-// import classes from './Settings.module.css';
 
 const Settings = () => {
     return (
-        <div className={classes.wrapper}>
+        <div className="">
             <h4>Settings</h4>
         </div>
     )

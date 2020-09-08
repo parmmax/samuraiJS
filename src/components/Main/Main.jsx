@@ -1,23 +1,20 @@
 import React from "react";
-
-import classes from './Main.module.css';
+import { Container, Jumbotron, Button } from 'react-bootstrap';
 
 const Main = (props) => {
     return (
-        <div className={classes.wrapper}>
-            <div className={classes.title1}>
-                <h1>pen<span>S</span>cript</h1>
-            </div>
-            <div className={classes.title2}>
-                <h3>sponsored by YouTube channel</h3>
-                <h3>It-Kamasutra</h3>
-            </div>
-            <div className={classes.author}>
-                <div>Created by</div>
-                <div>Maxim Parmakly</div>
-            </div>
-        </div>
+        <Container >
+            <Jumbotron className="jumbotron my-0">
+                <h1 className="display-2 text-primary">PenScript</h1>
+                <hr className="my-4" />
+                <p classsName="text-muted">This's my way to learn React</p>
+                <p classsName="">
+                    <Button size="md" href="#" variant="outline-primary">Show details</Button>
+                </p>
+            </Jumbotron>
+        </Container>
     )
 };
 
 export default Main
+

@@ -1,0 +1,54 @@
+@import url("./assets/sass/themes.scss");
+
+$white:    #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e6e6ea;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #18181c;
+$black:    #000;
+
+$blue:    #007abc ;
+$indigo:  #6610f2 ;
+$purple:  #8e68d4 ; //6f42c1
+$pink:    #e83e8c ;
+$red:     #dc3545 ;
+$orange:  #eb8c77 ;
+$yellow:  #ffc107 ;
+$green:   #28a745 ;
+$teal:    #20c997 ;
+$cyan:    #17a2b8 ;
+
+$primary:       $indigo ;
+$secondary:     $purple ;
+$success:       $teal ;
+$info:          $purple ; 
+$warning:       $yellow ;
+$danger:        $red ;
+$light:         $gray-200 ;
+$dark:          $gray-900 ;
+
+// $primary: #ef5939;
+// $secondary: #18181c;
+// $info: #404044;
+// $color: #808084;
+// $color: #c0c0c4;
+// $color: #e6e6ea;
+
+.avatar-sm {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+}
+
+.avatar-lg {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+}
+
+@import "node_modules/bootstrap/scss/bootstrap";

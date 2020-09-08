@@ -1,7 +1,6 @@
 import React from 'react';
-import {Route} from "react-router-dom";
-import './App.css';
-import './assets/fonts/fonts.css'
+import { Route } from "react-router-dom";
+import './App.scss';
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Profile from "./components/Profile/Profile";
@@ -14,38 +13,18 @@ import UsersContainer from "./components/Users/UsersContainer";
 
 const App = (props) => {
 
-    // debugger;
-
     return (
-        <Route path='/' render={() =>
-            <div>
-                <div className="app-wrapper">
-                    <Header/>
-                    <Route path='/home'
-                           render={() => <Main/>} />
-
-                    <Route path='/profile'
-                           render={() => <Profile />} />
-
-                    <Route path='/messages'
-                           render={() => <DialogsContainer />} />
-
-                    <Route path='/projects'
-                           render={() => <Projects/>} />
-
-                    <Route path='/media'
-                           render={() => <Media/>} />
-
-                    <Route path='/settings'
-                           render={() => <Settings/>} />
-
-                    <Route path='/users'
-                           render={() => <UsersContainer />} />
-                    {/*<Route path='/singIn'*/}
-                    {/*       render={() => <SingIn/>}/>*/}
-                </div>
-                {/*<Footer/>*/}
-            </div>}/>
+        <div className="">
+            <Header />
+            <Route exact path='/' render={() => <Main />} />
+            <Route path='/profile' render={() => <Profile />} />
+            <Route path='/messages' render={() => <DialogsContainer />} />
+            <Route path='/projects' render={() => <Projects />} />
+            <Route path='/media' render={() => <Media />} />
+            <Route path='/settings' render={() => <Settings />} />
+            <Route path='/users' render={() => <UsersContainer />} />
+            <Footer />
+        </div>
     );
 };
 

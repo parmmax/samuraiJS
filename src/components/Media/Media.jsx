@@ -1,9 +1,8 @@
 import React from 'react';
-import classes from './Media.module.css';
 
 const Media = () => {
     return (
-        <div className={classes.wrapper}>
+        <div className="">
             <h4>Media</h4>
         </div>
     )

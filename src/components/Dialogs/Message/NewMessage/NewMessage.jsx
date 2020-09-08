@@ -1,5 +1,5 @@
 import React from "react";
-import classes from './NewMessage.module.css';
+import { InputGroup, FormControl, Button } from 'react-bootstrap';
 
 const NewMessage = (props) => {
 
@@ -13,23 +13,18 @@ const NewMessage = (props) => {
     };
 
     return (
-        <div>
-            <section className={classes.newMessageWrap}>
-                <textarea
-                    className={classes.newMessageArea}
-                    cols="30" rows="10"
-                    placeholder='Enter your message'
-                    // ref={newMessageElement}
-                    onChange={onNewMessageChange}
-                    value={props.newTextMessage}
-                />
-                <div className={classes.btnWrap}>
-                    <button onClick={onSendMessageClick} className={classes.btnSendMessage} type="button">
-                        Send
-                    </button>
-                </div>
-            </section>
-        </div>
+        <InputGroup className="w-100 mb-4" size="sm">
+            <FormControl
+                placeholder="Enter your message"
+                aria-label="Enter your message"
+                aria-describedby="basic-addon3"
+                onChange={onNewMessageChange}
+                value={props.newTextMessage}
+            />
+            <InputGroup.Append>
+                <Button onClick={onSendMessageClick} variant="info">Send</Button>
+            </InputGroup.Append>
+        </InputGroup>
     )
 };
 export default NewMessage

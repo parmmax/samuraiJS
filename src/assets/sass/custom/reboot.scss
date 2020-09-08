@@ -1,0 +1,41 @@
+@import "./variables.scss";
+section,
+.section {
+    position: relative;
+    padding: 2.75rem 0;
+    @media screen and (max-width: $grid-breakpoints(xl)) {
+        padding: 2.25rem 0;
+    }
+    @media screen and (max-width: $grid-breakpoints(md)) {
+        padding: 1.75rem 0;
+    }
+    @media screen and (max-width: $grid-breakpoints(sm)) {
+        padding: 1.25rem 0;
+    }
+}
+
+article,
+.article {
+    position: relative;
+    padding: 1rem 0;
+    @media screen and (max-width: $grid-breakpoints(xl)) {
+        padding: 1.25rem 0;
+    }
+    @media screen and (max-width: $grid-breakpoints(md)) {
+        padding: 1rem 0;
+    }
+    @media screen and (max-width: $grid-breakpoints(sm)) {
+        padding: 0.75rem 0;
+    }
+}
+
+ol,
+ul,
+dl {
+    list-style: none;
+}
+
+.font-new {
+    font-family: $font-family-new;
+}
+

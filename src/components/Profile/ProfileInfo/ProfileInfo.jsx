@@ -1,23 +1,24 @@
-import React from "react";
-import classes from './ProfileInfo.module.css';
+import React from 'react';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Card } from 'react-bootstrap';
 
 const ProfileInfo = (props) => {
     return (
-        <div className={classes.profileInfoWrap}>
-            <div className={classes.avaBox}>
-                <img className={classes.avatar}
-                     src="https://images.unsplash.com/photo-1526956159426-b7d06370c2d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-                     alt="imgAvatar"/>
-            </div>
-            <section className={classes.personalInfo}>
-                <div className={classes.name}>
-                    <div className={classes.first}>Maxim</div>
-                    <div className={classes.last}>Parmakliy</div>
-                </div>
-                <div className={classes.item}>february, 5th</div>
-                <div className={classes.item}>Republic of JavaScript</div>
-            </section>
-        </div>
+        <Card className="my-3 text-center bg-light text-dark border-0 shadow">
+            <Card.Body className="my-2">
+                <FontAwesomeIcon className="mb-3" icon={faUser} size="4x" />
+                <Card.Title className="text-primary">Maxim Parmakliy</Card.Title>
+                <Card.Subtitle className="font-weight-light text-info">Republic of JavaScript</Card.Subtitle>
+            </Card.Body>
+            <Card.Text className="">
+                <blockquote className="blockquote mb-2">
+                    <footer className="blockquote-footer ">
+                        Hi! I'm Junior Front-end Web-developer on <cite title="Source Title">React-Redux</cite>
+                    </footer>
+                </blockquote>
+            </Card.Text>
+        </Card >
     )
 };
 

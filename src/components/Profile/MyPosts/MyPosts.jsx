@@ -1,14 +1,14 @@
 import React from "react";
-import classes from './MyPosts.module.css';
 import Post from "./Post/Post";
+import { Card, InputGroup, FormControl, Button } from 'react-bootstrap';
 
 const MyPosts = (props) => {
 
     let postsElement = props.posts.map(p =>
         <Post key={p.id}
-              id={p.id}
-              message={p.message}
-              likesCounts={p.likesCounts}
+            id={p.id}
+            message={p.message}
+            likesCounts={p.likesCounts}
         />);
 
     let onAddPost = () => {
@@ -16,32 +16,32 @@ const MyPosts = (props) => {
     };
 
     let onNewPostChange = (event) => {
-        // let newTextFromTextarea = newPostElement.current.value;
         let newTextFromTextarea = event.target.value;
         props.updateNewPostText(newTextFromTextarea);
     };
 
     return (
-        <section className={classes.container}>
-            <h3 className={classes.title}>My Posts</h3>
-            <section className={classes.newPostWrap}>
-                <textarea className={classes.newPostArea}
-                          cols="30" rows="10"
-                          placeholder='Enter your new post'
-                    // ref={newPostElement}
-                          onChange={onNewPostChange}
-                          value={props.newPostText}
-
-                />
-                <div className={classes.btnWrap}>
-                    <button onClick={onAddPost} className={classes.btnAddPost} type="button">
-                        Add Post
-                    </button>
-                </div>
-            </section>
-            <section className={classes.postsElementWrap}>
-                {postsElement}
-            </section>
+        <section>
+            <Card className="my-3 bg-light text-dark border-0 shadow">
+                <Card.Header className="border-0">
+                    <h2 className="font-weight-light my-3">My Posts</h2>
+                    <InputGroup variant="info" className="w-100 mb-4" size="sm">
+                        <FormControl
+                            placeholder="Enter your new post"
+                            aria-label="Enter your new post"
+                            aria-describedby="basic-addon3"
+                            onChange={onNewPostChange}
+                            value={props.newPostText}
+                        />
+                        <InputGroup.Append>
+                            <Button variant="outline-primary" onClick={onAddPost} >Add post</Button>
+                        </InputGroup.Append>
+                    </InputGroup>
+                </Card.Header>
+                <Card.Body className="my-2">
+                    {postsElement}
+                </Card.Body>
+            </Card >
         </section>
     )
 };

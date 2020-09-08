@@ -1,16 +1,18 @@
 import React from "react";
-import classes from './Profile.module.css';
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import MyPostsContainer from "./MyPosts/MyPostsContainer";
+import { Container } from "react-bootstrap";
 
 const Profile = (props) => {
 
     // debugger;
     return (
-        <main className={classes.profileWrap}>
-            <ProfileInfo />
-            <MyPostsContainer />
-        </main>
+        <Container>
+            <section>
+                <ProfileInfo />
+                <MyPostsContainer />
+            </section>
+        </Container>
     )
 };
 

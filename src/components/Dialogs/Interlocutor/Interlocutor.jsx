@@ -1,19 +1,20 @@
 import React from "react";
-import {NavLink} from "react-router-dom";
-import classes from './Interlocuter.module.css';
+import { Navbar, Nav } from 'react-bootstrap';
+// import { NavLink } from "react-router-dom";
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Interlocutor = (props) => {
     let path = "/messages/" + props.id;
     return (
-        <div className={classes.list}>
-            <NavLink to={path} className={classes.link}
-                     activeClassName={classes.active}>
-                <img className={classes.avatar}
-                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQZG32SKDDbWTsBEd-PUgoqeubMnA6vwlBYrb-xUORxKtl5J-oi"
-                     alt="avatar"/>
-                {props.name}
-            </NavLink>
-        </div>
+        <Navbar className="" >
+            <Nav className="mr-auto">
+                <Nav.Link href={path} className="text-info">
+                    <FontAwesomeIcon icon={faUser} className="text-secondary" size="2x" />
+                    <span className="ml-4 text-info">{props.name}</span>
+                </Nav.Link>
+            </Nav>
+        </Navbar>
     )
 };
 
