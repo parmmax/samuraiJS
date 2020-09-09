@@ -16,12 +16,13 @@ const Header = () => {
                     <Row>
                         <Col>
                             <Nav className="mr-auto">
+                                <Nav.Link className="text-secondary" href="/">Home</Nav.Link>
                                 <Nav.Link className="text-secondary" href="/users">Users</Nav.Link>
                                 <Nav.Link className="text-secondary" href="/profile">Profile</Nav.Link>
                                 <Nav.Link className="text-secondary" href="/messages">Messages</Nav.Link>
                                 <Nav.Link className="text-secondary" href="/projects">Projects</Nav.Link>
-                                <Nav.Link className="text-secondary" href="/media">Media</Nav.Link>
-                                <Nav.Link className="text-secondary" href="/settings">Settings</Nav.Link>
+                                <Nav.Link disabled className="text-muted" href="/media">Media</Nav.Link>
+                                <Nav.Link disabled className="text-muted" href="/settings">Settings</Nav.Link>
                             </Nav>
                         </Col>
                     </Row>

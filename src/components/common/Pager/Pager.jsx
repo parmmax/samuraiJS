@@ -1,7 +1,7 @@
 import React from 'react';
 import { Pagination, } from 'react-bootstrap';
 
-const PageSwitch = (props) => {
+const Pager = (props) => {
 
     let pagesCount = Math.ceil(props.totalCount / props.count); //totalPages = Math.ceil(totalItems / pageSize)
 
@@ -46,4 +46,4 @@ const PageSwitch = (props) => {
     )
 }
 
-export default PageSwitch;
+export default Pager;

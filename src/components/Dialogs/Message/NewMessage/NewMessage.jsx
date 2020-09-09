@@ -22,7 +22,7 @@ const NewMessage = (props) => {
                 value={props.newTextMessage}
             />
             <InputGroup.Append>
-                <Button onClick={onSendMessageClick} variant="info">Send</Button>
+                <Button onClick={onSendMessageClick} variant="outline-primary">Send</Button>
             </InputGroup.Append>
         </InputGroup>
     )

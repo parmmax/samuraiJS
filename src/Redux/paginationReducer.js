@@ -5,7 +5,7 @@ let initialState = {
     activePage: 1, // активная, текущая страница или currentPage
     count: 10, // кол-во items на одной странице
     totalCount: 0, // всего counts
-    isFetching: false
+    isFetching: false // получаются данные? (true/false)
 };
 
 const paginationReducer = (state = initialState, action) => {

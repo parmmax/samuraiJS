@@ -52,9 +52,9 @@ class UsersContainer extends React.Component {
 let mapStateToProps = (state) => {
     return {
         users: state.usersPage.users,
-        activePage: state.pageSwitch.activePage,
-        count: state.pageSwitch.count,
-        totalCount: state.pageSwitch.totalCount,
+        activePage: state.pagination.activePage,
+        count: state.pagination.count,
+        totalCount: state.pagination.totalCount,
         isFetching: state.preLoader.isFetching
     }
 };

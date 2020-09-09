@@ -1,7 +1,7 @@
 import React from 'react';
 // import Pagination from '../common/Pagination/Pagination';
 import { Container, Row, Col, Button, Card, } from 'react-bootstrap';
-import PageSwitch from '../common/PageSwitch/PageSwitch';
+import Pager from '../common/Pager/Pager';
 import PreLoader from '../common/PreLoader/PreLoader';
 // import { faUser } from '@fortawesome/free-solid-svg-icons';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -18,8 +18,7 @@ const Users = (props) => {
                 <article>
                     <Row>
                         <Col className="d-flex justify-content-end">
-                            {/* <Pagination  /> */}
-                            <PageSwitch 
+                            <Pager 
                                 activePage={props.activePage}
                                 count={props.count}
                                 totalCount={props.totalCount}
@@ -28,7 +27,7 @@ const Users = (props) => {
                         </Col>
                     </Row>
                     <Row>
-                        <Col>
+                        <Col >
                             {props.isFetching ? <PreLoader /> : props.users.map(u => <Card key={u.id} className="my-5 bg-light shadow border-0">
                                 <Card.Header>
                                     {/* <FontAwesomeIcon className="text-dark" icon={u.photos.small != null ? u.photos.small : faUser} size="2x" /> */}
