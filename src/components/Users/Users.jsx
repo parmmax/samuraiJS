@@ -1,7 +1,7 @@
 import React from 'react';
 // import Pagination from '../common/Pagination/Pagination';
 import { Container, Row, Col, Button, Card, } from 'react-bootstrap';
-import Pager from '../common/Pager/Pager';
+import Pager from '../common/Pager/Pager.tsx';
 import PreLoader from '../common/PreLoader/PreLoader';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
