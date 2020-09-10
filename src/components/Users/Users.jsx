@@ -3,8 +3,8 @@ import React from 'react';
 import { Container, Row, Col, Button, Card, } from 'react-bootstrap';
 import Pager from '../common/Pager/Pager';
 import PreLoader from '../common/PreLoader/PreLoader';
-// import { faUser } from '@fortawesome/free-solid-svg-icons';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Users = (props) => {
 
@@ -18,9 +18,9 @@ const Users = (props) => {
                 <article>
                     <Row>
                         <Col className="d-flex justify-content-end">
-                            <Pager 
+                            <Pager
                                 activePage={props.activePage}
-                                count={props.count}
+                                countPerPage={props.countPerPage}
                                 totalCount={props.totalCount}
                                 onPageChanged={props.onPageChanged}
                             />
@@ -30,16 +30,16 @@ const Users = (props) => {
                         <Col >
                             {props.isFetching ? <PreLoader /> : props.users.map(u => <Card key={u.id} className="my-5 bg-light shadow border-0">
                                 <Card.Header>
-                                    {/* <FontAwesomeIcon className="text-dark" icon={u.photos.small != null ? u.photos.small : faUser} size="2x" /> */}
+                                    {
+                                        u.photos.small != null
+                                            ? <img className="text-dark" src={u.photos.small} alt="user" />
+                                            : <FontAwesomeIcon className="text-muted" icon={faUser} size="2x" />
+                                    }
                                 </Card.Header>
                                 <Card.Body>
                                     <Card.Title className="text-primary">{u.name}</Card.Title>
                                     <Card.Text>
-                                        <blockquote className="blockquote mb-0">
-                                            <footer className="blockquote-footer">
-                                                <cite title="Source Title">{u.status === null ? 'No status yet' : u.status}</cite>
-                                            </footer>
-                                        </blockquote>
+                                        {u.status === null ? <span className="text-muted font-italic">&mdash; No status yet</span> : <span className="text-primary font-italic">&mdash; {u.status}</span>}
                                     </Card.Text>
                                     {u.followed
                                         ? <Button size="sm" variant="outline-secondary" onClick={() => { props.unfollow(u.id) }} >Unfollow</Button>

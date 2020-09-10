@@ -1,27 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Pagination, } from 'react-bootstrap';
 
 const Pager = (props) => {
 
-    let pagesCount = Math.ceil(props.totalCount / props.count); //totalPages = Math.ceil(totalItems / pageSize)
+    let pagesCount = Math.ceil(props.totalCount / props.countPerPage); //totalPages = Math.ceil(totalItems / pageSize)
 
-    let pageNumber = []; 
+    let pageNumber = [];
 
-    // let pager = {
-    //     totalItems: totalItems,
-    //     currentPage: currentPage,
-    //     pageSize: pageSize,
-    //     totalPages: totalPages,
-    //     startPage: startPage,
-    //     endPage: endPage,
-    //     startIndex: startIndex,
-    //     endIndex: endIndex,
-    //     pages: pages
-    // };
-
-    for (let number = 1; number <= pagesCount; number++) {
-        pageNumber.push(number);
+    for (let num = 1; num <= pagesCount; num++) {
+        pageNumber.push(num);
     }
+
+    // console.log('countPerPage: ', props.countPerPage);
+    // console.log('activePage: ', props.activePage);
 
     return (
         <div className="d-flex flex-column align-items-end">
@@ -41,7 +32,6 @@ const Pager = (props) => {
                 <Pagination.Next />
                 <Pagination.Last />
             </Pagination>
-            
         </div>
     )
 }

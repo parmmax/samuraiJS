@@ -5,8 +5,6 @@ import Users from './Users';
 import { follow, unfollow, setUsers, } from "../../Redux/usersReducer";
 import { setActivePage, setTotalCount, } from "../../Redux/paginationReducer";
 import { toggleIsFetching } from "../../Redux/preLoaderReducer";
-// import PreLoader from '../common/PreLoader/PreLoader';
-
 
 class UsersContainer extends React.Component {
 
@@ -33,10 +31,9 @@ class UsersContainer extends React.Component {
     render() {
         return (
             <>
-                {/* {this.props.isFetching ? <PreLoader /> : } */}
                 <Users
                     activePage={this.props.activePage}
-                    count={this.props.count}
+                    countPerPage={this.props.countPerPage}
                     totalCount={this.props.totalCount}
                     isFetching={this.props.isFetching}
                     users={this.props.users}
@@ -53,7 +50,7 @@ let mapStateToProps = (state) => {
     return {
         users: state.usersPage.users,
         activePage: state.pagination.activePage,
-        count: state.pagination.count,
+        countPerPage: state.pagination.countPerPage,
         totalCount: state.pagination.totalCount,
         isFetching: state.preLoader.isFetching
     }
