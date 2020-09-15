@@ -17,35 +17,37 @@ const Dialogs = (props) => {
             message={m.message} />);
 
     return (
-        <Container>
-            <section>
-                <Row>
-                    <Col className="col-md-3 col-sm-4">
-                        <Card className="border-0 shadow sticky-top">
-                            <Card.Header className="border-0">
-                                <h2 className="font-weight-light">Friends</h2>
-                            </Card.Header>
-                            {dialogsElement}
-                        </Card>
-                    </Col>
-                    <Col className="col-md-9 col-sm-8">
-                        <Card className="border-0 shadow sticky-top">
-                            <Card.Header className="border-0">
-                                <h2 className="font-weight-light">Messages</h2>
-                            </Card.Header>
-                            <Card.Body className="">
-                                {messagesElement}
-                            </Card.Body>
-                            <Card.Footer className="border-0">
-                                <NewMessage newTextMessage={props.newTextMessage}
-                                    onNewMessageChange={props.onNewMessageChange}
-                                    onSendMessageClick={props.onSendMessageClick}
-                                />
-                            </Card.Footer>
-                        </Card>
-                    </Col>
-                </Row>
-            </section>
+        <Container fluid>
+            <Container>
+                <section>
+                    <Row>
+                        <Col className="col-md-3 col-sm-4">
+                            <Card className="border-0 shadow sticky-top">
+                                <Card.Header className="border-0">
+                                    <h2 className="font-weight-light">Friends</h2>
+                                </Card.Header>
+                                {dialogsElement}
+                            </Card>
+                        </Col>
+                        <Col className="col-md-9 col-sm-8">
+                            <Card className="border-0 shadow sticky-top">
+                                <Card.Header className="border-0">
+                                    <h2 className="font-weight-light">Messages</h2>
+                                </Card.Header>
+                                <Card.Body className="">
+                                    {messagesElement}
+                                </Card.Body>
+                                <Card.Footer className="border-0">
+                                    <NewMessage newTextMessage={props.newTextMessage}
+                                        onNewMessageChange={props.onNewMessageChange}
+                                        onSendMessageClick={props.onSendMessageClick}
+                                    />
+                                </Card.Footer>
+                            </Card>
+                        </Col>
+                    </Row>
+                </section>
+            </Container>
         </Container>
 
     )

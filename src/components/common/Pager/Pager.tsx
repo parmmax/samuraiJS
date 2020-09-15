@@ -12,7 +12,7 @@ type PropsType = {
 let Pager: React.FC<PropsType> = ({ totalCount, countPerPage,
     activePage = 1,
     onPageChanged = x => x,
-    portionSize = 10 }) => {
+    portionSize = 20 }) => {
 
     let pagesCount = Math.ceil(totalCount / countPerPage);
 

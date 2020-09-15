@@ -1,20 +1,19 @@
-import React from "react";
-import { Container, Jumbotron, Button } from 'react-bootstrap';
+import React from 'react';
+import { Container, Button } from 'react-bootstrap';
 
 const Main = (props) => {
     return (
-        <Container >
-            <Jumbotron className="jumbotron my-0">
-                <h1 className="display-2 text-primary">PenScript</h1>
-                <hr className="my-4" />
-                <p classsName="text-muted">This's my way to learn React</p>
-                <p classsName="">
-                    <Button size="md" href="#" variant="outline-primary">Show details</Button>
-                </p>
-            </Jumbotron>
+        <Container fluid className="auth-img-bg px-0">
+            <Container>
+                <section className="">
+                    <h1 className="display-2 text-light">PenScript</h1>
+                    <hr className="my-3 text-primary" />
+                    <p className="text-light">My way to learning React-Redux and TypeScript</p>
+                    <Button size="md" href="/profile" variant="outline-light">Show profile</Button>
+                </section>
+            </Container>
         </Container>
     )
 };
 
 export default Main
-

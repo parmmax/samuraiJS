@@ -1,17 +1,29 @@
 import React from "react";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import MyPostsContainer from "./MyPosts/MyPostsContainer";
-import { Container } from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
 
 const Profile = (props) => {
 
     // debugger;
     return (
-        <Container>
-            <section>
-                <ProfileInfo />
-                <MyPostsContainer />
-            </section>
+        <Container fluid>
+            <Container className="d-flex flex-row justify-content-between align-items-start">
+                <section className="col-sm-3">
+                    <aside>
+                        <ProfileInfo profile={props.profile} />
+                        <Navbar className="">
+                            <Nav className="mr-auto font-weight-light d-flex flex-column text-primary">
+                                <Nav.Link href="/messages">Messages</Nav.Link>
+                                <Nav.Link href="/projects">Projects</Nav.Link>
+                            </Nav>
+                        </Navbar>
+                    </aside>
+                </section>
+                <section className="col-sm-9">
+                    <MyPostsContainer />
+                </section>
+            </Container>
         </Container>
     )
 };

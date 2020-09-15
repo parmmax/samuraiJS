@@ -19,8 +19,8 @@ const Post = (props) => {
                         <FontAwesomeIcon className="text-dark mx-2" icon={faHeart} size="1x" />
                     </Col>
                     <Col className="col-lg-2 col-sm-5 text-right">
-                        <Button disabled type="edit" value="Reset" variant="outline-secondary" size="sm" className="">Edit</Button>{' '}
-                        <Button disabled type="reset" value="Reset" variant="outline-secondary" size="sm" className="">Reset</Button>
+                        <Button disabled type="edit" value="Reset" variant="outline-secondary" size="sm" className="mb-1">Edit</Button>{' '}
+                        <Button disabled type="reset" value="Reset" variant="outline-secondary" size="sm" className="mb-1">Reset</Button>
                     </Col>
                 </Row>
             </Card.Footer>
