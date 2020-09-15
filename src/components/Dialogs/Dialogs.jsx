@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import Interlocutor from "./Interlocutor/Interlocutor";
 import Message from "./Message/Message";
 import NewMessage from "./Message/NewMessage/NewMessage";
@@ -26,7 +26,12 @@ const Dialogs = (props) => {
                                 <Card.Header className="border-0">
                                     <h2 className="font-weight-light">Friends</h2>
                                 </Card.Header>
-                                {dialogsElement}
+                                <Card.Text>
+                                    {dialogsElement}
+                                </Card.Text>
+                                <Card.Footer>
+                                    <Button variant="outline-primary" href="/profile" size="sm">Back to profile</Button>
+                                </Card.Footer>
                             </Card>
                         </Col>
                         <Col className="col-md-9 col-sm-8">

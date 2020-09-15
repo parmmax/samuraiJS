@@ -14,11 +14,13 @@ const ProfileInfo = (props) => {
         <Card className="mb-3 text-center bg-light text-dark border-0 shadow">
             <Card.Body className="my-2">
                 {
-                    <img src={props.profile.photos.large} alt="user" className="" /> != null
+                    <img src={props.profile.photos.large} alt="user" className="" /> === null
                         ? <img className="" src={props.profile.photos.small} alt={props.profile.fullName} className="mb-3" />
-                        : <FontAwesomeIcon className="mb-3" icon={faUser} size="4x" />
+                        : <FontAwesomeIcon className="mb-3" icon={faUser} className="text-primary" size="4x" />
                 }
+                <hr />
                 <Card.Title className="text-primary text-capitalize">{props.profile.fullName}</Card.Title>
+                <hr />
                 <Card.Subtitle className="font-weight-normal font-italic text-primary">
                     {props.profile.aboutMe != null ? props.profile.aboutMe : 'No description "About Me" '}
                 </Card.Subtitle>

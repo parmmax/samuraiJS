@@ -12,8 +12,8 @@ const Profile = (props) => {
                 <section className="col-sm-3">
                     <aside>
                         <ProfileInfo profile={props.profile} />
-                        <Navbar className="">
-                            <Nav className="mr-auto font-weight-light d-flex flex-column text-primary">
+                        <Navbar variant="primary" className="rounded">
+                            <Nav className="mr-auto font-weight-bold d-flex flex-column">
                                 <Nav.Link href="/messages">Messages</Nav.Link>
                                 <Nav.Link href="/projects">Projects</Nav.Link>
                             </Nav>
