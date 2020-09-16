@@ -1,10 +1,10 @@
 import React from 'react';
-import * as axios from 'axios';
 import { Container, Row, Col, Button, Card, NavLink } from 'react-bootstrap';
 import Pager from '../common/Pager/Pager.tsx';
 import PreLoader from '../common/PreLoader/PreLoader';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { followAPI } from '../../api/api';
 
 const Users = (props) => {
 
@@ -48,12 +48,7 @@ const Users = (props) => {
                                         </Card.Text>
                                         {u.followed
                                             ? <Button size="sm" variant="outline-secondary" onClick={() => {
-                                                axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
-                                                    withCredentials: true,
-                                                    headers: {
-                                                        "API-KEY": "a95ba110-1876-4682-9ad0-785d9af21b91"
-                                                    }
-                                                })
+                                                followAPI.deleteFollow(u.id)
                                                     .then(response => {
                                                         if (response.data.resultCode === 0) {
                                                             props.unfollow(u.id);
@@ -61,12 +56,7 @@ const Users = (props) => {
                                                     });
                                             }} >Unfollow</Button>
                                             : <Button size="sm" variant="outline-primary" onClick={() => {
-                                                axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
-                                                    withCredentials: true,
-                                                    headers: {
-                                                        "API-KEY": "a95ba110-1876-4682-9ad0-785d9af21b91"
-                                                    }
-                                                })
+                                                followAPI.postFollow(u.id)
                                                     .then(response => {
                                                         if (response.data.resultCode === 0) {
                                                             props.follow(u.id);

@@ -19,8 +19,7 @@ const Header = (props) => {
                             <Col>
                                 <Nav className="mr-auto font-weight-light">
                                     <Nav.Link href="/">Home</Nav.Link>
-                                    <Nav.Link href="/users">Peoples</Nav.Link>
-                                    {/* <Nav.Link href="/messages">Messages</Nav.Link> */}
+                                    <Nav.Link href="/users">Users</Nav.Link>
                                     <NavDropdown title="Documentation" id="basic-nav-dropdown" className="">
                                         <NavDropdown.Item className="text-primary" target="_blank" href="https://social-network.samuraijs.com/docs">API documentation</NavDropdown.Item>
                                         <NavDropdown.Divider />
