@@ -15,9 +15,7 @@ const Profile = (props) => {
                         <Navbar variant="primary" className="rounded">
                             <Nav className="mr-auto font-weight-bold d-flex flex-column">
                                 <Nav.Link href="/messages">Messages</Nav.Link>
-                                <Nav.Link href="/users">Users</Nav.Link>
                                 <Nav.Link href="/projects">Projects</Nav.Link>
-                                <Nav.Link href="/media">Media</Nav.Link>
                             </Nav>
                         </Navbar>
                     </aside>
