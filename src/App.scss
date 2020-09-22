@@ -3,13 +3,21 @@
 $bg-color: #e6e6ea;
 
 $theme-colors: (
-    "primary": #6610f2,
-    "secondary": #18181c,
-    "muted": #8e68d4,
-    "info": #404044, 
-    "link": #ef5939,
+    "primary": #101010,
+    "secondary": #ef5939,
+    "muted": #404044,
+    "info": #8e68d4, 
+    "link": #ed7e65,
+    // "primary": #6610f2,
+    // "secondary": #18181c,
+    // "muted": #8e68d4,
+    // "info": #404044, 
+    // "link": #ef5939,
 );
 
+.font-family-secondary {
+    font-family: 'Great Vibes', cursive;
+}
 
 .auth-img-bg {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 0.9) 70%),

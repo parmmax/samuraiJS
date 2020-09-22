@@ -9,7 +9,7 @@ const Main = (props) => {
                     <h1 className="display-2 text-light">PenScript</h1>
                     <hr className="my-3 text-primary" />
                     <p className="text-light">My way to learning React-Redux and TypeScript</p>
-                    <Button size="md" href="/profile" variant="outline-light">Show profile</Button>
+                    <Button size="md" href="/profile" variant="outline-light">Show my profile</Button>
                 </section>
             </Container>
         </Container>

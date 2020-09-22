@@ -14,7 +14,7 @@ import Footer from './components/Footer/Footer';
 const App = (props) => {
 
     return (
-        <div className="">
+        <div>
             <Header login={props.login} isAuth={props.isAuth} />
             <Route exact path='/' render={() => <Main />} />
             <Route path='/profile/:userId?' render={() => <ProfileContainer />} /> 

@@ -10,8 +10,8 @@ const Header = (props) => {
                     <Container>
                         <Row>
                             <Col>
-                                <Navbar.Brand href="/" className="text-primary font-weight-light font-italic">
-                                    PenScript
+                                <Navbar.Brand href="/" className="lead text-primary font-weight-light font-family-secondary">
+                                    <h3>pen<span className="text-secondary">S</span>cript</h3>
                                 </Navbar.Brand>
                             </Col>
                         </Row>

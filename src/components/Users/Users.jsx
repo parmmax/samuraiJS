@@ -29,43 +29,45 @@ const Users = (props) => {
                         </Row>
                         <Row>
                             <Col >
-                                {props.isFetching ? <PreLoader /> : props.users.map(u => <Card key={u.id} className="my-5 bg-light shadow border-0">
-                                    <Card.Header>
-                                        <NavLink href={'/profile/' + u.id}>
-                                            {
-                                                u.photos.small != null
+                                {props.isFetching
+                                    ? <PreLoader />
+                                    : props.users.map(u => <Card key={u.id} className="my-5 bg-light shadow border-0">
+                                        <Card.Header>
+                                            <NavLink href={'/profile/' + u.id}>
+                                                {u.photos.small != null
                                                     ? <img className="text-dark" src={u.photos.small} alt="user" />
-                                                    : <FontAwesomeIcon className="text-muted" icon={faUser} size="2x" />
+                                                    : <FontAwesomeIcon className="text-muted" icon={faUser} size="2x" />}
+                                            </NavLink>
+                                        </Card.Header>
+                                        <Card.Body>
+                                            <NavLink href={'/profile/' + u.id}>
+                                                <Card.Title className="text-primary">{u.name}</Card.Title>
+                                            </NavLink>
+                                            <Card.Text>
+                                                {u.status === null
+                                                    ? <span className="text-muted font-italic">&mdash; No status yet</span>
+                                                    : <span className="text-primary font-italic">&mdash; {u.status}</span>}
+                                            </Card.Text>
+                                            {u.followed
+                                                ? <Button size="sm" variant="outline-secondary" onClick={() => {
+                                                    followAPI.deleteFollow(u.id)
+                                                        .then(response => {
+                                                            if (response.data.resultCode === 0) {
+                                                                props.unfollow(u.id);
+                                                            }
+                                                        });
+                                                }}>Unfollow</Button>
+                                                : <Button size="sm" variant="outline-primary" onClick={() => {
+                                                    followAPI.postFollow(u.id)
+                                                        .then(response => {
+                                                            if (response.data.resultCode === 0) {
+                                                                props.follow(u.id);
+                                                            }
+                                                        });
+                                                }}>Follow</Button>
                                             }
-                                        </NavLink>
-                                    </Card.Header>
-                                    <Card.Body>
-                                        <NavLink href={'/profile/' + u.id}>
-                                            <Card.Title className="text-primary">{u.name}</Card.Title>
-                                        </NavLink>
-                                        <Card.Text>
-                                            {u.status === null ? <span className="text-muted font-italic">&mdash; No status yet</span> : <span className="text-primary font-italic">&mdash; {u.status}</span>}
-                                        </Card.Text>
-                                        {u.followed
-                                            ? <Button size="sm" variant="outline-secondary" onClick={() => {
-                                                followAPI.deleteFollow(u.id)
-                                                    .then(response => {
-                                                        if (response.data.resultCode === 0) {
-                                                            props.unfollow(u.id);
-                                                        }
-                                                    });
-                                            }} >Unfollow</Button>
-                                            : <Button size="sm" variant="outline-primary" onClick={() => {
-                                                followAPI.postFollow(u.id)
-                                                    .then(response => {
-                                                        if (response.data.resultCode === 0) {
-                                                            props.follow(u.id);
-                                                        }
-                                                    });
-                                            }} >Follow</Button>
-                                        }
-                                    </Card.Body>
-                                </Card >)}
+                                        </Card.Body>
+                                    </Card >)}
                             </Col>
                         </Row>
                     </article>
