@@ -9,7 +9,7 @@ import {
 } from '../../Redux/usersReducer'
 import { setActivePage } from '../../Redux/paginationReducer'
 import Users from './Users'
-import { Redirect } from 'react-router-dom'
+import { withAuthRedirect } from '../../hoc/withAuthRedirect'
 
 class UsersContainer extends React.Component {
 
@@ -34,7 +34,6 @@ class UsersContainer extends React.Component {
             followingInProgress={this.props.followingInProgress}
             getFollow={this.props.getFollow}
             getUnFollow={this.props.getUnFollow}
-            isAuth={this.props.isAuth}
          />
       )
    }
@@ -42,7 +41,6 @@ class UsersContainer extends React.Component {
 
 let mapStateToProps = (state) => {
    return {
-      isAuth: state.auth.isAuth,
       users: state.usersPage.users,
       activePage: state.pagination.activePage,
       countPerPage: state.pagination.countPerPage,
@@ -52,9 +50,10 @@ let mapStateToProps = (state) => {
    }
 }
 
-export default connect(
-   mapStateToProps,
-   {
-      follow, unFollow, setActivePage, getUsers, getFollow, getUnFollow,
-   },
-)(UsersContainer)
+export default withAuthRedirect(
+   connect(mapStateToProps, {
+         follow, unFollow, setActivePage, getUsers, getFollow, getUnFollow,
+      },
+   )
+   (UsersContainer),
+)

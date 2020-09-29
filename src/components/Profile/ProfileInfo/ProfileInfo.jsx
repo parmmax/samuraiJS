@@ -1,7 +1,7 @@
 import React from 'react';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Button, Card, Nav, Navbar } from 'react-bootstrap';
+import { Button, Card } from 'react-bootstrap';
 import PreLoader from '../../common/PreLoader/PreLoader';
 
 const ProfileInfo = (props) => {

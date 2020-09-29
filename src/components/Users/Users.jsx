@@ -10,15 +10,12 @@ import Pager from '../common/Pager/Pager.tsx'
 import PreLoader from '../common/PreLoader/PreLoader'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Redirect } from 'react-router-dom'
 
 const Users = (props) => {
 
    if (props.isFetching) {
       return <PreLoader/>
    }
-
-   // if (!props.isAuth) return <Redirect to={'/login'}/>
 
    return (
       <Container className="py-4 min-vh-100">

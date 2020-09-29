@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container, Button } from 'react-bootstrap';
-import AuthContainer from '../common/Auth/AuthContainer'
 
 const Home = (props) => {
     return (
@@ -13,7 +12,7 @@ const Home = (props) => {
                     <hr className="my-3 text-primary" />
                     {/*<Button href="/profile" variant="outline-secondary" size="md">Show profile</Button>*/}
                     {/*<Button href="/users" variant="outline-info" size="md" className="ml-2">Get users</Button>*/}
-                    <Button href="/login" variant="outline-secondary" className="ml-0"><AuthContainer/></Button>
+                    <Button href="/login" variant="outline-secondary" className="ml-0">Sing in</Button>
                 </section>
             </Container>
         </Container>

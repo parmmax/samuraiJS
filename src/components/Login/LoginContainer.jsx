@@ -1,5 +1,4 @@
 import React from 'react';
-import * as axios from 'axios';
 import Login from './Login';
 import { connect } from "react-redux";
 
