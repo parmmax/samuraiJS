@@ -29,7 +29,7 @@ const dialogsReducer = (state = initialState, action) => {
                 ...state,
                 messages: [...state.messages,
                     {
-                        id: 7,
+                        id: state.dialogs.id + 1,
                         message: state.newMessageText
                     }],
                 newMessageText: ''

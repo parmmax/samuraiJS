@@ -9,9 +9,9 @@ const Interlocutor = (props) => {
     return (
         <Navbar className="" >
             <Nav className="mr-auto">
-                <Nav.Link href={path} className="text-info">
-                    <FontAwesomeIcon icon={faUser} className="text-secondary" size="2x" />
-                    <span className="ml-4 text-info">{props.name}</span>
+                <Nav.Link href={path} className="">
+                    <FontAwesomeIcon icon={faUser} className="" size="2x" />
+                    <span className="ml-4">{props.name}</span>
                 </Nav.Link>
             </Nav>
         </Navbar>

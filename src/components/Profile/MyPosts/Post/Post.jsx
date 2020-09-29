@@ -1,30 +1,25 @@
 import React from "react";
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Button, Card, Row, Col } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 const Post = (props) => {
     return (
-
-        <Card className="my-3 bg-light text-dark border-0">
-            <Card.Body className="bg-white">
-                <Card.Text>
-                    {props.message}
-                </Card.Text>
-            </Card.Body>
-            <Card.Footer className="border-0 bg-white">
-                <Row>
-                    <Col className="col-lg-10 col-sm-7 text-left">
-                        {props.likesCounts}
-                        <FontAwesomeIcon className="text-dark mx-2" icon={faHeart} size="1x" />
-                    </Col>
-                    <Col className="col-lg-2 col-sm-5 text-right">
-                        <Button disabled type="edit" value="Reset" variant="outline-secondary" size="sm" className="mb-1">Edit</Button>{' '}
-                        <Button disabled type="reset" value="Reset" variant="outline-secondary" size="sm" className="mb-1">Reset</Button>
-                    </Col>
-                </Row>
-            </Card.Footer>
-        </Card >
+        <div className="py-2">
+            <header className="mb-2">
+                {props.message}
+            </header>
+            <footer className="d-flex justify-content-between">
+                <aside>
+                    <small className="text-secondary">{props.likesCounts}</small>
+                    <FontAwesomeIcon className="text-secondary mx-2" icon={faHeart} size="1x" />
+                </aside>
+                <aside>
+                    <Button type="edit" value="edit" variant="outline-secondary" size="sm" className="bg-transporent text-right border-0">Edit</Button>
+                    <Button type="reset" value="reset" variant="outline-secondary" size="sm" className="bg-transporent text-right border-0">Reset</Button>
+                </aside>
+            </footer>
+        </div >
     )
 };
 

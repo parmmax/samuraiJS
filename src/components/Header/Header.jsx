@@ -4,8 +4,8 @@ import AuthContainer from "../common/Auth/AuthContainer";
 
 const Header = (props) => {
     return (
-        <header id="header">
-            <Container fluid className="px-0">
+        <header id="header" className="position-relative zIndex-2">
+            <Container fluid className="px-0 position-absolute">
                 <Navbar bg="transporent" variant="primary">
                     <Container>
                         <Row>
@@ -17,12 +17,14 @@ const Header = (props) => {
                         </Row>
                         <Row>
                             <Col>
-                                <Nav className="mr-auto font-weight-light">
+                                <Nav className="mr-auto font-weight-normal">
                                     <Nav.Link href="/">Home</Nav.Link>
-                                    <Nav.Link href="/users">Peoples</Nav.Link>
-                                    {/* <Nav.Link href="/messages">Messages</Nav.Link> */}
                                     <NavDropdown title="Documentation" id="basic-nav-dropdown" className="">
-                                        <NavDropdown.Item className="text-primary" target="_blank" href="https://social-network.samuraijs.com/docs">API documentation</NavDropdown.Item>
+                                        <NavDropdown.Item className="text-primary" target="_blank" href="https://social-network.samuraijs.com/">Social Network API</NavDropdown.Item>
+                                        <NavDropdown.Item className="text-primary" target="_blank" href="https://social-network.samuraijs.com/docs">Social Network API doc</NavDropdown.Item>
+                                        <NavDropdown.Divider />
+                                        <NavDropdown.Item className="text-primary" target="_blank" href="https://openweathermap.org/current#name">Open Weather API</NavDropdown.Item>
+                                        <NavDropdown.Item className="text-primary" target="_blank" href="https://openweathermap.org/faq">Open Weather FAQ</NavDropdown.Item>
                                         <NavDropdown.Divider />
                                         <NavDropdown.Item className="text-primary" target="_blank" href="https://reacttraining.com/">React Training</NavDropdown.Item>
                                         <NavDropdown.Item className="text-primary" target="_blank" href="https://react-bootstrap.github.io/components/alerts">React-Bootstrap</NavDropdown.Item>

@@ -1,6 +1,6 @@
 import React from "react";
 import Post from "./Post/Post";
-import { Card, InputGroup, FormControl, Button } from 'react-bootstrap';
+import { Form, FormControl, Button } from 'react-bootstrap';
 
 const MyPosts = (props) => {
 
@@ -21,26 +21,28 @@ const MyPosts = (props) => {
     };
 
     return (
-        <Card className="mb-3 bg-light text-dark border-0 shadow">
-            <Card.Header className="border-0">
-                <h2 className="font-weight-light mb-3">My Posts</h2>
-                <InputGroup variant="info" className="w-100 mb-4" size="sm">
+        <section className="shadow p-4 rounded-sm w-100 bg-white">
+            <header className="border-0">
+                <h5 className="font-weight-light text-center mb-3">My Posts</h5>
+            </header>
+            <article>
+                <Form.Group variant="info" className="d-flex flex-column justify-content-center align-items-end mb-4" size="sm">
                     <FormControl
-                        placeholder="Enter your new post"
-                        aria-label="Enter your new post"
-                        aria-describedby="basic-addon3"
+                        placeholder="Enter new post"
+                        as="textarea"
+                        rows="3"
+                        cols="5"
                         onChange={onNewPostChange}
                         value={props.newPostText}
+                        className="mb-2"
                     />
-                    <InputGroup.Append className="">
-                        <Button variant="outline-primary" onClick={onAddPost} >Add post</Button>
-                    </InputGroup.Append>
-                </InputGroup>
-            </Card.Header>
-            <Card.Body className="my-2">
+                    <Button variant="outline-secondary" size="sm" onClick={onAddPost} >Add post</Button>
+                </Form.Group>
+            </article>
+            <article>
                 {postsElement}
-            </Card.Body>
-        </Card >
+            </article>
+        </section>
     )
 };
 

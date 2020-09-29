@@ -12,7 +12,7 @@ type PropsType = {
 let Pager: React.FC<PropsType> = ({ totalCount, countPerPage,
     activePage = 1,
     onPageChanged = x => x,
-    portionSize = 20 }) => {
+    portionSize = 10 }) => {
 
     let pagesCount = Math.ceil(totalCount / countPerPage);
 
@@ -30,19 +30,19 @@ let Pager: React.FC<PropsType> = ({ totalCount, countPerPage,
 
     return (
         <div className="d-flex flex-column align-items-end">
-            <Pagination size="sm" className="text-secondary">
+            <Pagination size="sm" className="shadow">
                 {portionNumber > 1 &&
                     <Pagination.Prev onClick={() => { setPortionNumber(portionNumber - 1) }} />}
 
                 {pages
                     .filter(p => p >= leftPortionPageNumber && p <= rightPortionPageNumber)
                     .map((p) => {
-                        return <Pagination.Item key={p} onClick={(e) => {onPageChanged(p);}}>{p}</Pagination.Item>
+                        return <Pagination.Item key={p} onClick={(e) => {onPageChanged(p)}}>
+                            {p}
+                        </Pagination.Item>
                     })}
                 {portionCount > portionNumber &&
                     <Pagination.Next onClick={() => { setPortionNumber(portionNumber + 1) }} />}
-
-
             </Pagination>
         </div>
     )

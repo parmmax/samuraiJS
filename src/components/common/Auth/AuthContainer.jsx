@@ -1,7 +1,7 @@
 import React from 'react';
 import * as axios from 'axios';
 import Auth from './Auth';
-import { toggleIsFetching } from '../../../Redux/preLoaderReducer';
+import { toggleIsFetching } from '../../../Redux/usersReducer';
 import { setAuthUserData } from '../../../Redux/authReducer';
 import { connect } from "react-redux";
 
@@ -13,7 +13,6 @@ class AuthContainer extends React.Component {
             withCredentials: true
         })
             .then(response => {
-                // debugger;
                 this.props.toggleIsFetching(false);
                 if (response.data.resultCode === 0) {
                     let { id, email, login } = response.data.data;
@@ -35,7 +34,7 @@ let mapStateToProps = (state) => {
     return {
         isAuth: state.auth.isAuth,
         login: state.auth.login,
-        isFetching: state.preLoader.isFetching
+        isFetching: state.usersPage.isFetching
     }
 };
 

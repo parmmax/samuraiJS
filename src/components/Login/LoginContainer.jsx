@@ -6,9 +6,8 @@ import { connect } from "react-redux";
 class LoginContainer extends React.Component  {
     
     componentDidMount() {
-        this.props.toggleIsFetching(true);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/auth/me`)
-            .then(response => {});
+
+
     }
 
     render() {
