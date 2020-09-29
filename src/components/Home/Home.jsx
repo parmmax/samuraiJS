@@ -1,7 +1,8 @@
 import React from 'react';
 import { Container, Button } from 'react-bootstrap';
+import AuthContainer from '../common/Auth/AuthContainer'
 
-const Home = () => {
+const Home = (props) => {
     return (
         <Container fluid className="home-bg min-vh-100 zIndex-1">
             <Container className="vh-100 text-center d-flex justify-content-center align-items-center">
@@ -12,8 +13,7 @@ const Home = () => {
                     <hr className="my-3 text-primary" />
                     {/*<Button href="/profile" variant="outline-secondary" size="md">Show profile</Button>*/}
                     {/*<Button href="/users" variant="outline-info" size="md" className="ml-2">Get users</Button>*/}
-                    <Button href="/login" variant="outline-secondary" size="lg" className="ml-0">Sing in</Button>
-                    {/*<Button href="/login" variant="outline-secondary" size="lg" className="ml-2"></Button>*/}
+                    <Button href="/login" variant="outline-secondary" className="ml-0"><AuthContainer/></Button>
                 </section>
             </Container>
         </Container>

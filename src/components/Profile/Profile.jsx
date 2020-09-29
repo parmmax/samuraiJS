@@ -13,12 +13,18 @@ import {
 } from 'react-bootstrap'
 import PreLoader from '../common/PreLoader/PreLoader'
 import AboutMe from './AboutMe/AboutMe'
+import { Redirect, Route } from 'react-router-dom'
+import DialogsContainer from '../Dialogs/DialogsContainer'
+import Projects from '../Projects/Projects'
+import Media from '../Media/Media'
 
 const Profile = (props) => {
 
    if (!props.profile) {
       return <PreLoader/>
    }
+
+   // if (!props.isAuth) return <Redirect to={'/login'}/>
 
    return (
       <Container className="py-4 min-vh-100">
@@ -38,6 +44,7 @@ const Profile = (props) => {
                         <Nav.Link className="text-primary p-0" href="/users">Users</Nav.Link>
                         <Nav.Link className="text-primary p-0" href="/messages">Messages</Nav.Link>
                         <Nav.Link className="text-primary p-0" href="/projects">Projects</Nav.Link>
+                        <Nav.Link className="text-primary p-0" href="/media">Media</Nav.Link>
                         <Nav.Link className="text-secondary p-0" href="/profile/2">Dimych's profile</Nav.Link>
                         {/*<Nav.Link className="text-primary p-0" href="/projects">Projects</Nav.Link>*/}
                      </Nav>

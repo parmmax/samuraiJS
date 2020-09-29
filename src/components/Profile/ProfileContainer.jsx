@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Redirect, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
 import {getProfile, setUserProfile} from '../../Redux/profileReducer';
 import Profile from "./Profile";
@@ -13,14 +13,11 @@ class ProfileContainer extends React.Component {
             userId = 8206;
         }
 
-
-        // let name = this.props
-        // debugger;
-
         this.props.getProfile(userId);
     }
 
     render() {
+
         return (            
             <Profile
                 {...this.props}
@@ -32,7 +29,8 @@ class ProfileContainer extends React.Component {
 
 let mapStateToProps = (state) => {
     return {
-        profile: state.profilePage.profile
+        isAuth: state.auth.isAuth,
+        profile: state.profilePage.profile,
     }
 };
 

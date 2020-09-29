@@ -11,11 +11,11 @@ let initialState = {
 
     ],
     messages: [
-        {id: 1, message: 'Yo!'},
+        {id: 1, message: 'Hello!'},
         {id: 2, message: 'Hi!'},
-        {id: 3, message: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, quia?'},
-        {id: 4, message: 'Maybe. But you? :)'},
-        {id: 5, message: ':D'},
+        {id: 3, message: 'Progressively incubate innovative niches with alternative intellectual capital. Intrinsicly recaptiualize exceptional models without market-driven supply chains. Distinctively.'},
+        {id: 4, message: 'Seamlessly harness 24/7 best practices.'},
+        {id: 5, message: 'Quickly parallel task premier channels after multimedia based "outside the.'},
 
     ],
     newMessageText: ''

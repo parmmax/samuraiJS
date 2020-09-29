@@ -8,9 +8,10 @@ const Login = (props) => {
             <section>
                <Form className="bg-clouds rounded-lg shadow-lg px-5 py-4">
                   <h2 className="text-primary">Sing in</h2>
+
                   <Form.Group controlId="formBasicEmail">
                      <Form.Label className="text-muted">Email address</Form.Label>
-                     <Form.Control className="border-primary" type="email" placeholder="Enter email"/>
+                     <Form.Control className="border-" type="email" placeholder="Enter email"/>
                      <Form.Text className="text-muted">
                         We'll never share your email with anyone else.
                      </Form.Text>
@@ -18,14 +19,16 @@ const Login = (props) => {
 
                   <Form.Group controlId="formBasicPassword">
                      <Form.Label className="text-muted">Password</Form.Label>
-                     <Form.Control className="border-primary" type="password" placeholder="Password"/>
+                     <Form.Control className="border" type="password" placeholder="Password"/>
                   </Form.Group>
+
                   <Form.Group controlId="formBasicCheckbox">
                      <Form.Check type="checkbox"
                                  variant="primary"
                                  className=""
                                  label="Remember Me"/>
                   </Form.Group>
+
                   <Button variant="outline-primary" type="submit" size="md">
                      Submit
                   </Button>

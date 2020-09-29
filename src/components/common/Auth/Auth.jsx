@@ -6,13 +6,13 @@ import React from 'react';
 // debugger;
 const Auth = (props) => {
     return (
-        <span>
+        <>
             {
                 props.isAuth
-                    ? props.login
+                    ? "Profile"
                     : "Sing in"
                 }
-        </span>
+        </>
     )
 }
 

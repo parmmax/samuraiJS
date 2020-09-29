@@ -3,6 +3,7 @@ import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import Interlocutor from "./Interlocutor/Interlocutor";
 import Message from "./Message/Message";
 import NewMessage from "./Message/NewMessage/NewMessage";
+import { Redirect } from 'react-router-dom'
 
 const Dialogs = (props) => {
 
@@ -15,6 +16,10 @@ const Dialogs = (props) => {
         <Message key={m.id}
             id={m.id}
             message={m.message} />);
+
+    // if (!props.isAuth) return <Redirect to={'/login'}/>
+
+    // alert(props.isAuth);
 
     return (
        <Container className="py-4 min-vh-100">

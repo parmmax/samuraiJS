@@ -23,9 +23,9 @@ class AuthContainer extends React.Component {
 
     render() {
         return (
-            <Auth
-                {...this.props}
-            />
+           <Auth
+              {...this.props}
+           />
         )
     }
 }
