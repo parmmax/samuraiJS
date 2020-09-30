@@ -1,6 +1,6 @@
 import React from 'react'
 import Auth from './Auth'
-import { getAuth, setAuthUserData } from '../../../Redux/authReducer'
+import { getAuth, setAuthMe } from '../../../Redux/authReducer'
 import { connect } from 'react-redux'
 
 class AuthContainer extends React.Component {
@@ -26,5 +26,5 @@ let mapStateToProps = (state) => {
 }
 
 export default connect(
-   mapStateToProps, { setAuthUserData, getAuth },
+   mapStateToProps, { setAuthMe, getAuth },
 )(AuthContainer)

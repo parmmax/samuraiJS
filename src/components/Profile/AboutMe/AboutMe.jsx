@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PreLoader from '../../common/PreLoader/PreLoader'
-import { Accordion, Button, Card } from 'react-bootstrap'
+import { Card } from 'react-bootstrap'
 
 const AboutMe = (props) => {
 

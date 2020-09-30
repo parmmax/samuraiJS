@@ -1,14 +1,10 @@
 import React from 'react'
 import ProfileInfo from './ProfileInfo/ProfileInfo'
 import MyPostsContainer from './MyPosts/MyPostsContainer'
-import {
-   Container,
-   Nav,
-   Navbar,
-   Row,
-} from 'react-bootstrap'
+import { Container, Row, } from 'react-bootstrap'
 import PreLoader from '../common/PreLoader/PreLoader'
 import AboutMe from './AboutMe/AboutMe'
+import { Sidebar } from '../common/Sidebar/Sidebar'
 
 const Profile = (props) => {
 
@@ -23,22 +19,7 @@ const Profile = (props) => {
             <Row>
                <aside className="col-lg-3 col-md-4 col-sm-12">
                   <ProfileInfo profile={props.profile}/>
-                  <Navbar bg="transporent"
-                          className="shadow rounded-sm w-100 bg-white">
-                     <Nav className="p-1 flex-column ">
-                        <Nav.Link className="text-primary p-0"
-                                  href="/users">Users</Nav.Link>
-                        <Nav.Link className="text-primary p-0"
-                                  href="/messages">Messages</Nav.Link>
-                        <Nav.Link className="text-primary p-0"
-                                  href="/projects">Projects</Nav.Link>
-                        <Nav.Link className="text-primary p-0"
-                                  href="/media">Media</Nav.Link>
-                        <Nav.Link className="text-secondary p-0"
-                                  href="/profile/2">Dimych's profile</Nav.Link>
-                        {/*<Nav.Link className="text-primary p-0" href="/projects">Projects</Nav.Link>*/}
-                     </Nav>
-                  </Navbar>
+                  <Sidebar />
                </aside>
                <main className="col-lg-6 col-md-4 col-sm-12">
                   <MyPostsContainer/>

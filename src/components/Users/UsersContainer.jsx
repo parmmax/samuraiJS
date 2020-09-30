@@ -10,6 +10,7 @@ import {
 import { setActivePage } from '../../Redux/paginationReducer'
 import Users from './Users'
 import { withAuthRedirect } from '../../hoc/withAuthRedirect'
+import { compose } from 'redux'
 
 class UsersContainer extends React.Component {
 
@@ -50,10 +51,12 @@ let mapStateToProps = (state) => {
    }
 }
 
-export default withAuthRedirect(
-   connect(mapStateToProps, {
-         follow, unFollow, setActivePage, getUsers, getFollow, getUnFollow,
-      },
-   )
-   (UsersContainer),
-)
+// export default withAuthRedirect(
+//    connect(mapStateToProps, { follow, unFollow, setActivePage, getUsers, getFollow, getUnFollow, })
+//    (UsersContainer)
+// )
+
+export default compose(
+   withAuthRedirect,
+   connect (mapStateToProps, { follow, unFollow, setActivePage, getUsers, getFollow, getUnFollow, })
+)(UsersContainer);

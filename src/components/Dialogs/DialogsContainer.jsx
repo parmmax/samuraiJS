@@ -1,11 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import {
-   sendMessageCreator,
-   updateNewMessageTextCreator,
-} from '../../Redux/dialogsReducer'
+import { sendMessageCreator, updateNewMessageTextCreator, } from '../../Redux/dialogsReducer'
 import Dialogs from './Dialogs'
 import { withAuthRedirect } from '../../hoc/withAuthRedirect'
+import { compose } from 'redux'
 
 class DialogsContainer extends React.Component {
    render () {
@@ -44,11 +42,7 @@ const mapDispatchToProps = (dispatch) => {
 
 // export default DialogsContainer
 
-export default withAuthRedirect(
-   connect(
-      mapStateToProps,
-      mapDispatchToProps,
-   )
-   (DialogsContainer),
-)
-
+export default compose(
+   connect( mapStateToProps, mapDispatchToProps ),
+   withAuthRedirect,
+)(DialogsContainer)

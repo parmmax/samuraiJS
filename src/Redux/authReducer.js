@@ -24,7 +24,7 @@ const authReducer = (state = initialState, action) => {
             return state;
     }
 };
-export const setAuthUserData = (id, email, login) => ({ type: 'SET_USER_DATA', data: {id, login, email } });
+export const setAuthMe = (id, login, email) => ({ type: 'SET_USER_DATA', data: {id, login, email } });
 
 // Thunk
 export const getAuth = () => {
@@ -32,7 +32,7 @@ export const getAuth = () => {
         authAPI.getAuthMe().then(response => {
                 if (response.data.resultCode === 0) {
                     let { id, login, email } = response.data.data;
-                    dispatch(setAuthUserData(id, email, login));
+                    dispatch(setAuthMe(id, login, email));
                 }
             });
     }
