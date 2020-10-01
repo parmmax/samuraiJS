@@ -23,7 +23,7 @@ const Dialogs = (props) => {
                    <Col className="col-md-3 col-sm-4">
                        <Card className="border-0 shadow sticky-top">
                            <Card.Header className="border-0">
-                               <h2 className="font-weight-light">Friends</h2>
+                               <h4 className="text-primary font-family-secondary font-weight-bold text-center">Friends</h4>
                            </Card.Header>
                            <Card.Text>
                                {dialogsElement}
@@ -36,7 +36,7 @@ const Dialogs = (props) => {
                    <Col className="col-md-9 col-sm-8">
                        <Card className="border-0 shadow sticky-top">
                            <Card.Header className="border-0">
-                               <h2 className="font-weight-light">Messages</h2>
+                               <h4 className="text-primary font-family-secondary font-weight-bold text-center">Messages</h4>
                            </Card.Header>
                            <Card.Body className="">
                                {messagesElement}

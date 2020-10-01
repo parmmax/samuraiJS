@@ -7,8 +7,8 @@ $theme-colors: (
         "primary": #7303c0,
         "secondary": #ec38bc,
         "muted": #505052,
-        "info": #9225da,
-        "link": #6202a2,
+        "info": #8d4ada,
+        "link": #a000a2,
   // "primary": #6610f2, //ef5939
   // "secondary": #18181c,
   // "muted": #8e68d4,
@@ -51,32 +51,6 @@ $theme-colors: (
   &-large {
     width: 144px;
     height: 144px;
-  }
-}
-
-.vh {
-  &-100 {
-    height: 100 hv;
-  }
-
-  &-90 {
-    height: 90 hv;
-  }
-
-  &-80 {
-    height: 80 hv;
-  }
-
-  &-70 {
-    height: 70 hv;
-  }
-
-  &-60 {
-    height: 60 hv;
-  }
-
-  &-50 {
-    height: 50 hv;
   }
 }
 

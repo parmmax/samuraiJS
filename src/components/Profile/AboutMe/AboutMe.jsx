@@ -9,37 +9,35 @@ const AboutMe = (props) => {
    }
 
    return (
-      <Card className="mb-3 text-center border-0 shadow bg-white">
-
+      <Card className="mb-3  border-0 shadow bg-white">
          <Card.Header>
-            <h5 className="font-weight-light text-center">About Me</h5>
+            <h4 className="text-primary font-family-secondary font-weight-bold text-center">About Me</h4>
          </Card.Header>
 
          <Card.Body>
-            <p >
+            <>
                {
                   props.profile.aboutMe != null
                      ? props.profile.aboutMe
-                     : <small>This user did't right description about himself
-                        yet. We hope, it w'll be later</small>
+                     : 'No description'
                }
-            </p>
-            <small className="font-weight-light">
-               <p className="">Looking for a Job: {' '}
-                  {
-                     props.profile.lookingForAJob === true
-                        ? ' Yes '
-                        : 'No'
-                  }
-               </p>
-               <p className="font-weight-light">Description:{' '}
-                  {
-                     props.profile.lookingForAJobDescription != null
-                        ? props.profile.lookingForAJobDescription
-                        : 'No'
-                  }
-               </p>
-            </small>
+            </>
+            <br/>
+            <>
+               {
+                  props.profile.lookingForAJob === true
+                     ? 'Looking for a Job'
+                     : 'I have job'
+               }
+            </>
+            <br/>
+            <>
+               {
+                  props.profile.lookingForAJobDescription != null
+                     ? <>Description: {props.profile.lookingForAJobDescription}</>
+                     : <>Description: {'No'}</>
+               }
+            </>
          </Card.Body>
       </Card>
    )

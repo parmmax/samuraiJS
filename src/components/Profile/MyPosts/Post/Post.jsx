@@ -6,9 +6,12 @@ import { Button } from 'react-bootstrap';
 const Post = (props) => {
     return (
         <div className="py-2">
-            <header className="mb-2">
-                {props.message}
+            <header className="mb-2 text-primary">
+               <small>{props.date}</small>
             </header>
+           <main>
+              {props.post}
+           </main>
             <footer className="d-flex justify-content-between">
                 <aside>
                     <small className="text-secondary">{props.likesCounts}</small>
