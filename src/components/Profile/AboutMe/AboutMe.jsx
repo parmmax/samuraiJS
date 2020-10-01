@@ -11,7 +11,7 @@ const AboutMe = (props) => {
    return (
       <Card className="mb-3  border-0 shadow bg-white">
          <Card.Header>
-            <h4 className="text-primary font-family-secondary font-weight-bold text-center">About Me</h4>
+            <h4 className="text-primary font-family-secondary font-weight-bold text-center mb-0">About Me</h4>
          </Card.Header>
 
          <Card.Body>

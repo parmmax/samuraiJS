@@ -1,8 +1,6 @@
 import React from 'react'
 import {
    Container,
-   Row,
-   Col,
    Button,
    NavLink,
 } from 'react-bootstrap'
@@ -26,7 +24,7 @@ const Users = (props) => {
                   className="display-4 font-family-secondary text-primary font-weight-light">Users</h2>
                <p className="text-muted">
                   In this page, you can find all
-                  registered peoples on
+                  registered peoples on{' '}
                   <a href="https://social-network.samuraijs.com/"
                      className="text-link">Social Network API</a>
                </p>

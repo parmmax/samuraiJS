@@ -3,7 +3,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button, Card } from 'react-bootstrap';
 import PreLoader from '../../common/PreLoader/PreLoader';
-import ProfileStatus from './ProfileStatus'
+import ProfileStatus from './ProfileStatus/ProfileStatus';
 
 const ProfileInfo = (props) => {
 
@@ -14,18 +14,17 @@ const ProfileInfo = (props) => {
     return (
         <Card className="mb-3 text-center border-0 shadow bg-white">
             <Card.Body className="">
-                <div className="">
-                    <div className="mb-3 rounded-circle">
-                        {
-                            props.profile.photos.small === null
-                                ? <FontAwesomeIcon className="text-dark" icon={faUser} size="4x" />
-                                : <img src={props.profile.photos.small} alt={props.profile.fullName} className="avatar-normal rounded-circle" />
-                        }
-                    </div>
-                </div>
-                <Card.Title className="text-capitalize">{props.profile.fullName}</Card.Title>
-               <div className="text-info">
-                  <ProfileStatus />
+               <div className="mb-3 rounded-circle">
+                  {
+                     props.profile.photos.small === null
+                        ? <FontAwesomeIcon className="text-dark" icon={faUser} size="4x" />
+                        : <img src={props.profile.photos.small} alt={props.profile.fullName} className="avatar-normal rounded-circle" />
+                  }
+               </div>
+                <Card.Title className="mb-1 text-capitalize">{props.profile.fullName}</Card.Title>
+               <div>
+                  <ProfileStatus status={props.status}
+                                 updateStatus={props.updateStatus} />
                </div>
             </Card.Body>
             <Card.Footer className="font-italic font-weight-light">

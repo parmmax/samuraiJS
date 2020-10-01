@@ -19,7 +19,14 @@ export const authAPI = {
 export const profileAPI = {
     getProfile(userId) {
         return instans.get(`profile/` + userId)
-    }
+    },
+    getStatus (userId) {
+        return instans.get(`profile/status/` + userId)
+    },
+    updateStatus (status) {
+        return instans.put(`profile/status/`, { status: status })
+        // смотри документацию API, чтоб знать что отрпавить на сервер. В мое случае status
+    },
 };
 
 export const usersAPI = {

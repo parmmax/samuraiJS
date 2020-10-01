@@ -5,7 +5,7 @@ class ProfileStatus extends React.Component {
 
    state = {
       editMode: false,
-      status: 'To edit status, Double click me',
+      status: this.props.status,
    }
 
    activateEditMode = () => {
@@ -18,6 +18,13 @@ class ProfileStatus extends React.Component {
       this.setState({
          editMode: false,
       })
+      this.props.updateStatus(this.state.status)
+   }
+
+   onStatusChange = (e) => {
+      this.setState({
+         status: e.currentTarget.value,
+      })
    }
 
    render () {
@@ -29,19 +36,34 @@ class ProfileStatus extends React.Component {
                   this.state.editMode
                      ? <FormControl
                         placeholder="Enter your status"
-                        aria-describedby="basic-addon"
-                        value={this.state.status}
+                        aria-describedby="status-addon"
+                        className="rounded-sm"
                         onBlur={this.deactivateEditMode}
                         autoFocus={true}
+                        value={this.state.status}
+                        onChange={this.onStatusChange}
                      />
-                     : <small onDoubleClick={this.activateEditMode}
-                              className="">{this.state.status}</small>
+                     : <div onDoubleClick={this.activateEditMode}
+                              className='text-primary rounded-sm p-auto w-100'
+                     >
+                        {
+                           this.props.status
+                              ? this.props.status
+                              : 'No status yet'
+                        }
+                     </div>
                }
-
                {/*<InputGroup.Append>*/}
                {/*   <Button className="" variant="outline-primary">Button</Button>*/}
                {/*</InputGroup.Append>*/}
             </InputGroup>
+            <small className="text-note">
+               {
+                  !this.state.editMode
+                  ? 'Double click to change status'
+                  : 'Click somewhere to update status'
+               }
+               </small>
          </div>
       )
    }

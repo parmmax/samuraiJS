@@ -23,7 +23,10 @@ const Profile = (props) => {
                <article className="py-0 col-lg-10 col-md-10 col-sm-10">
                   <Row>
                      <aside className="col-lg-4 col-md-4 col-sm-12">
-                        <ProfileInfo profile={props.profile}/>
+                        <ProfileInfo profile={props.profile}
+                                     status={props.status}
+                                     updateStatus={props.updateStatus}
+                        />
                         <AboutMe profile={props.profile} getProfile={props.getProfile}/>
                      </aside>
                      <article className="py-0 col-lg-8 col-md-8 col-sm-12">

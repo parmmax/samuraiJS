@@ -9,7 +9,7 @@ const Auth = (props) => {
         <>
             {
                 props.isAuth
-                    ? "Profile"
+                    ? props.login
                     : "Sing in"
                 }
         </>
