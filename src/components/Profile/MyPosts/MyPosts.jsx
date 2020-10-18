@@ -1,6 +1,9 @@
 import React from 'react'
 import Post from './Post/Post'
-import { Form, FormControl, Button } from 'react-bootstrap'
+import { Button, Form, InputGroup } from 'react-bootstrap'
+import { Field, reduxForm } from 'redux-form'
+import { maxLengthCreator, minLengthCreator, required, } from '../../../utils/validators/validators'
+import { Textarea } from '../../common/FormsControls/FormsControls'
 
 const MyPosts = (props) => {
 
@@ -12,36 +15,18 @@ const MyPosts = (props) => {
             likesCounts={p.likesCounts}
       />)
 
-   let onAddPost = () => {
-      props.addPost()
-   }
-
-   let onNewPostChange = (event) => {
-      let newTextFromTextarea = event.target.value
-      props.updateNewPostText(newTextFromTextarea)
+   const onSubmit = (values) => {
+      props.addPost(values.addPostBody);
    }
 
    return (
-      <section className="mb-3 shadow p-4 rounded-sm w-100 bg-white">
-         <header className="border-0">
-            <h4 className="text-primary font-family-secondary font-weight-bold text-center mb-3">My Posts</h4>
+      <section className="mb-3 p-4 rounded-sm w-100">
+         <header className="text-center mb-3">
+            <h3 className="font-family-secondary font-weight-bold border-bottom border-primary pb-2">my <span className="text-primary">P</span>osts</h3>
          </header>
+
          <article>
-            <Form.Group variant="info"
-                        className="d-flex flex-column justify-content-center align-items-end mb-4"
-                        size="sm">
-               <FormControl
-                  placeholder="Enter new post"
-                  as="textarea"
-                  rows="3"
-                  cols="5"
-                  onChange={onNewPostChange}
-                  value={props.newPostText}
-                  className="mb-2"
-               />
-               <Button variant="outline-secondary" size="sm"
-                       onClick={onAddPost}>Add post</Button>
-            </Form.Group>
+            <PostFormRedux onSubmit={onSubmit} />
          </article>
          <article>
             {postsElement}
@@ -49,5 +34,35 @@ const MyPosts = (props) => {
       </section>
    )
 }
+
+let maxLength200 = maxLengthCreator(200);
+let minLength2 = minLengthCreator(2);
+
+const PostForm = (props) => {
+   return (
+      <Form onSubmit={props.handleSubmit}
+            className="d-flex flex-column align-items-end w-100">
+         <Form.Group className="d-flex flex-column w-100">
+            <Field component={Textarea}
+                   type="textarea"
+                   name="addPostBody"
+                   placeholder="Enter new post"
+                   className="mb-2 form-control"
+                   validate={[required, maxLength200, minLength2]}
+            />
+         </Form.Group>
+         <InputGroup.Append>
+            <Button type="submit"
+                    variant="outline-primary"
+                    className=""
+                    size="sm">Add post</Button>
+         </InputGroup.Append>
+      </Form>
+   )
+}
+
+const PostFormRedux = reduxForm({
+   form: 'postForm'
+})(PostForm)
 
 export default MyPosts

@@ -1,5 +1,4 @@
 const SEND_MESSAGE = 'SEND_MESSAGE';
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE_NEW_MESSAGE_TEXT';
 
 let initialState = {
     dialogs: [
@@ -17,37 +16,28 @@ let initialState = {
         {id: 4, message: 'Seamlessly harness 24/7 best practices.'},
         {id: 5, message: 'Quickly parallel task premier channels after multimedia based "outside the.'},
 
-    ],
-    newMessageText: ''
+    ]
 }
 
 const dialogsReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case SEND_MESSAGE:
+            let body = action.addMessageBody
+
             return  {
                 ...state,
                 messages: [...state.messages,
                     {
-                        id: state.dialogs.id + 1,
-                        message: state.newMessageText
-                    }],
-                newMessageText: ''
-            };
-        case UPDATE_NEW_MESSAGE_TEXT:
-            return {
-                ...state,
-                newMessageText: action.newTextMessage
-            };
+                        id: 6,
+                        message: body
+                    }]
+            }
         default:
             return state;
     }
 };
 
-export const sendMessageCreator = () => ({type: 'SEND_MESSAGE'});
-export const updateNewMessageTextCreator = (newTextFromTextareaNewMessage) => ({
-    type: 'UPDATE_NEW_MESSAGE_TEXT',
-    newTextMessage: newTextFromTextareaNewMessage
-});
+export const sendMessageCreator = (addMessageBody) => ({type: 'SEND_MESSAGE', addMessageBody});
 
 export default dialogsReducer;

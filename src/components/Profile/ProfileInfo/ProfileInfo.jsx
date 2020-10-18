@@ -12,12 +12,12 @@ const ProfileInfo = (props) => {
     }
 
     return (
-        <Card className="mb-3 text-center border-0 shadow bg-white">
+        <Card className="mb-3 text-center border-0 bg-transparent">
             <Card.Body className="">
                <div className="mb-3 rounded-circle">
                   {
                      props.profile.photos.small === null
-                        ? <FontAwesomeIcon className="text-dark" icon={faUser} size="4x" />
+                        ? <FontAwesomeIcon className="text-light" icon={faUser} size="4x" />
                         : <img src={props.profile.photos.small} alt={props.profile.fullName} className="avatar-normal rounded-circle" />
                   }
                </div>
@@ -27,7 +27,7 @@ const ProfileInfo = (props) => {
                                  updateStatus={props.updateStatus} />
                </div>
             </Card.Body>
-            <Card.Footer className="font-italic font-weight-light">
+            <Card.Footer className="font-italic font-weight-light border-0 bg-transparent">
                 If current user follower for requested user<br />
                 <Button disabled={true}
                     className="text-weight-light border-0"

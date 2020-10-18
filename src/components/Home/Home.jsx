@@ -1,22 +1,31 @@
-import React from 'react';
-import { Container, Button } from 'react-bootstrap';
+import React from 'react'
+import { Container, Button } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFeatherAlt } from '@fortawesome/free-solid-svg-icons'
 
 const Home = (props) => {
-    return (
-        <Container fluid className="home-bg min-vh-100 zIndex-1">
-            <Container className="vh-100 text-center d-flex justify-content-center align-items-center">
-                <section>
-                    <h1 className="display-2 text-light font-family-secondary">pen<span className="text-light">S</span>cript</h1>
-                    <hr className="my-3 text-primary" />
-                    <h5 className="text-light font-weight-lighter">My way to learning React-Redux and TypeScript</h5>
-                    <hr className="my-3 text-primary" />
-                    {/*<Button href="/profile" variant="outline-secondary" size="md">Show profile</Button>*/}
-                    {/*<Button href="/users" variant="outline-info" size="md" className="ml-2">Get users</Button>*/}
-                    <Button href="/login" variant="outline-secondary" className="ml-0">Sing in</Button>
-                </section>
-            </Container>
-        </Container>
-    )
-};
+   return (
+      <Container fluid className="min-vh-100 zIndex-1 bg-home">
+         <Container
+            className="vh-100 text-center d-flex justify-content-center align-items-center">
+            <section>
+               <h1 className="display-2 font-family-secondary">
+                  {/* Перо переместить над i. Использовать другое изображение пера */}
+                  pen
+                  <FontAwesomeIcon className="ml-3 mr-0 p-0 text-primary"
+                                   icon={faFeatherAlt} size="1x"/>
+                  script
+               </h1>
+               <h5 className="font-weight-lighter my-4">My way to learning
+                  React-Redux and TypeScript</h5>
+               <Button href="/profile"
+                       size="lg"
+                       variant="outline-primary"
+                       className="mx-0 my-0 text-light">Show profile</Button>
+            </section>
+         </Container>
+      </Container>
+   )
+}
 
 export default Home

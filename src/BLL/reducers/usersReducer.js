@@ -1,21 +1,24 @@
-import {followAPI, usersAPI} from "../api/api";
-import { setTotalCount } from "./paginationReducer";
+import {followAPI, usersAPI} from "../../api/api";
+import { setActivePage, setTotalCount } from './paginationReducer'
 
 const FOLLOW = 'FOLLOW';
 const UN_FOLLOW = 'UN_FOLLOW';
 const SET_USERS = 'SET_USERS';
 const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
 const TOGGLE_IS_FOLLOWING_PROGRESS = 'TOGGLE_IS_FOLLOWING_PROGRESS';
+// const FAKE = 'FAKE';
 
 let initialState = {
     users: [],
     isFetching: false,
-    followingInProgress: []
+    followingInProgress: [],
+    // fake: 10
 };
 
 const usersReducer = (state = initialState, action) => {
 
     switch (action.type) {
+        // case 'FAKE': return{ ...state, fake: state.fake + 1 }
         case FOLLOW: {
             return {
                 ...state,
@@ -69,11 +72,13 @@ export const toggleIsFetching = (isFetching) => ({ type: 'TOGGLE_IS_FETCHING', i
 export const toggleFollowingProgress = (isFetching, userId) => ({ type: 'TOGGLE_IS_FOLLOWING_PROGRESS', isFetching, userId });
 
 // Thunk Creator
-export const getUsers = (activePage, count) => {
+export const getUsersThunk = (requstedPage, count) => {
     // Thunk
     return (dispatch) => {
         dispatch(toggleIsFetching(true));
-        usersAPI.getUsers(activePage, count).then(response => {
+        dispatch(setActivePage(requstedPage));
+
+        usersAPI.requestUsers(requstedPage, count).then(response => {
             dispatch(toggleIsFetching(false));
             dispatch(setUsers(response.items));
             dispatch(setTotalCount(response.totalCount));
@@ -82,7 +87,7 @@ export const getUsers = (activePage, count) => {
 };
 
 // Thunk Creator
-export const getFollow = (userId) => {
+export const getFollowThunk = (userId) => {
     // Thunk
     return (dispatch) => {
         dispatch(toggleFollowingProgress(true, userId));
@@ -96,7 +101,7 @@ export const getFollow = (userId) => {
     }
 };
 
-export const getUnFollow = (userId) => {
+export const getUnFollowThunk = (userId) => {
     // Thunk
     return (dispatch) => {
         dispatch(toggleFollowingProgress(true, userId));

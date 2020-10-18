@@ -1,4 +1,4 @@
-import { weatherOpenApi } from '../api/weatherOpenApi'
+import { weatherOpenApi } from '../../api/weatherOpenApi'
 
 const SET_WEATHER = 'SET_WEATHER'
 

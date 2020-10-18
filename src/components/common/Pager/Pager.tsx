@@ -33,18 +33,23 @@ let Pager: React.FC<PropsType> = ({
     return (
         <Pagination size="sm">
             {portionNumber > 1 &&
-            <Pagination.Prev onClick={() => {
-                setPortionNumber(portionNumber - 1)
-            }}/>}
+            <Pagination.Prev className="bg-dark"
+                             onClick={() => {
+                                 setPortionNumber(portionNumber - 1)
+                             }}/>}
 
             {pages
                 .filter(p => p >= leftPortionPageNumber && p <= rightPortionPageNumber)
                 .map((p) => {
-                    return <Pagination.Item key={p} onClick={(e) => {
-                        onPageChanged(p)
-                    }}>
-                        {p}
-                    </Pagination.Item>
+                    return (
+                        <Pagination.Item key={p}
+                                         className="text-dark"
+                                         onClick={(e) => {
+                                             onPageChanged(p)
+                                         }}>
+                            {p}
+                        </Pagination.Item>
+                    )
                 })}
             {portionCount > portionNumber &&
             <Pagination.Next onClick={() => {
@@ -52,6 +57,6 @@ let Pager: React.FC<PropsType> = ({
             }}/>}
         </Pagination>
     )
-}
+};
 
 export default Pager;

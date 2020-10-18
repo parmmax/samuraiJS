@@ -1,29 +1,38 @@
-import React from "react";
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Button } from 'react-bootstrap';
+import React from 'react'
+import {
+   faCalendarCheck,
+   faHeart,
+} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Button } from 'react-bootstrap'
 
 const Post = (props) => {
-    return (
-        <div className="py-2">
-            <header className="mb-2 text-primary">
-               <small>{props.date}</small>
-            </header>
-           <main>
-              {props.post}
-           </main>
-            <footer className="d-flex justify-content-between">
-                <aside>
-                    <small className="text-secondary">{props.likesCounts}</small>
-                    <FontAwesomeIcon className="text-secondary mx-2" icon={faHeart} size="1x" />
-                </aside>
-                <aside>
-                    <Button type="edit" value="edit" variant="outline-secondary" size="sm" className="bg-transporent text-right border-0">Edit</Button>
-                    <Button type="reset" value="reset" variant="outline-secondary" size="sm" className="bg-transporent text-right border-0">Reset</Button>
-                </aside>
-            </footer>
-        </div >
-    )
-};
+   return (
+      <div className="py-2">
+         <header className="mb-2 text-muted flex-row">
+            <FontAwesomeIcon className="mr-1" icon={faCalendarCheck} size="1x"/>
+            <small>{props.date}</small>
+         </header>
+         <main>
+            {props.post}
+         </main>
+         <footer className="d-flex justify-content-between">
+            <aside>
+               <small className="text-note">{props.likesCounts}</small>
+               <FontAwesomeIcon className="text-note mx-2" icon={faHeart}
+                                size="1x"/>
+            </aside>
+            <aside>
+               <Button disabled type="edit" value="edit" variant="outline-primary"
+                       size="sm"
+                       className="bg-transparent text-right border-0">Edit</Button>
+               <Button disabled type="reset" value="reset" variant="outline-primary"
+                       size="sm"
+                       className="bg-transparent text-right border-0">Reset</Button>
+            </aside>
+         </footer>
+      </div>
+   )
+}
 
 export default Post

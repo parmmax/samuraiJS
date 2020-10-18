@@ -27,11 +27,20 @@ class ProfileStatus extends React.Component {
       })
    }
 
+   componentDidUpdate (prevProps, prevState, snapshot) {
+      if (prevProps.status !== this.props.status) {
+         this.setState({
+            status: this.props.status
+         })
+      }
+   }
+
    render () {
+      // console.log('render');
       return (
          <div>
-            <InputGroup size={'sm'}
-                        className="text-info font-italic justify-content-center">
+            <InputGroup size='sm'
+                        className="font-italic justify-content-center">
                {
                   this.state.editMode
                      ? <FormControl
@@ -44,7 +53,7 @@ class ProfileStatus extends React.Component {
                         onChange={this.onStatusChange}
                      />
                      : <div onDoubleClick={this.activateEditMode}
-                              className='text-primary rounded-sm p-auto w-100'
+                              className='text-info rounded-sm p-auto w-100'
                      >
                         {
                            this.props.status
@@ -53,17 +62,14 @@ class ProfileStatus extends React.Component {
                         }
                      </div>
                }
-               {/*<InputGroup.Append>*/}
-               {/*   <Button className="" variant="outline-primary">Button</Button>*/}
-               {/*</InputGroup.Append>*/}
             </InputGroup>
-            <small className="text-note">
+
                {
                   !this.state.editMode
-                  ? 'Double click to change status'
-                  : 'Click somewhere to update status'
+                  ? <small className="text-muted">Double click to change status</small>
+                  : <small className="text-info">Click somewhere to update status</small>
                }
-               </small>
+
          </div>
       )
    }

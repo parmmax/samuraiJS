@@ -11,26 +11,32 @@ const instans = axios.create({
 
 
 export const authAPI = {
-    getAuthMe() {
-        return instans.get('auth/me')
+    requestAuthMe() {
+        return instans.get('auth/me');
+    },
+    login( email, password, rememberMe = false ) {
+        return instans.post('auth/login', { email, password, rememberMe })
+    },
+    logout() {
+        return instans.delete('auth/login');
     }
 };
 
 export const profileAPI = {
-    getProfile(userId) {
-        return instans.get(`profile/` + userId)
+    requestProfile(userId) {
+        return instans.get(`profile/` + userId);
     },
-    getStatus (userId) {
-        return instans.get(`profile/status/` + userId)
+    requestStatus (userId) {
+        return instans.get(`profile/status/` + userId);
     },
     updateStatus (status) {
         return instans.put(`profile/status/`, { status: status })
-        // смотри документацию API, чтоб знать что отрпавить на сервер. В мое случае status
+        // смотри документацию API, чтоб знать что отрпавить на сервер. В данном случае status
     },
 };
 
 export const usersAPI = {
-    getUsers(activePage, count) {
+    requestUsers(activePage, count) {
         return instans.get(`users?page=${activePage}&count=${count}`)
         .then(response => response.data)
     }

@@ -28,7 +28,7 @@ const Users = (props) => {
                   <a href="https://social-network.samuraijs.com/"
                      className="text-link">Social Network API</a>
                </p>
-               <Button variant="outline-info"
+               <Button variant="outline-secondary"
                        href="/profile"
                        size="sm"
                >
@@ -49,7 +49,7 @@ const Users = (props) => {
                   {
                      props.users.map(u =>
                         <div key={u.id}
-                             className="mb-3 p-2 bg-light shadow rounded-lg ">
+                             className="mb-3 p-2 bg-transparent shadow rounded-lg ">
                            <div
                               className="d-flex justify-content-between align-items-center">
                               <div className="d-flex align-items-center">
@@ -63,14 +63,15 @@ const Users = (props) => {
                                              alt="user"/>
                                           :
                                           <FontAwesomeIcon
-                                             className="rounded-circle text-dark"
+                                             className="rounded-circle text-light"
                                              icon={faUser} size="2x"/>}
                                     </NavLink>
                                  </div>
                                  <div>
-                                    <NavLink
-                                       href={'/profile/' +
-                                       u.id}>{u.name}</NavLink>
+                                    <NavLink href={'/profile/' + u.id}
+                                    className="text-white">
+                                       {u.name}
+                                    </NavLink>
                                     <small
                                        className="text-muted font-italic">
                                        {u.status === null

@@ -1,45 +1,35 @@
 import React from 'react'
-import { Button, Container, Form } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
+import LoginReduxForm from './LoginForm'
+import { connect } from 'react-redux'
+import { login } from '../../BLL/reducers/authReducer'
+import { Redirect } from 'react-router-dom'
 
 const Login = (props) => {
+
+   const onSubmit = (formData) => {
+      console.log((formData));
+      props.login(formData.email, formData.password, formData.rememberMe);
+
+   }
+   console.log('Login component isAuth: ', props.isAuth);
+   if (props.isAuth) {
+      return <Redirect to="/profile"/>
+   }
+
    return (
-      <Container fluid className="home-bg min-vh-100 zIndex-1">
+      <Container fluid className="min-vh-100 zIndex-1">
          <Container className="vh-100 text-left d-flex justify-content-center align-items-center">
             <section>
-               <Form className="bg-clouds rounded-lg shadow-lg px-5 py-4">
-                  <h2 className="text-primary">Sing in</h2>
-
-                  <Form.Group controlId="formBasicEmail">
-                     <Form.Label className="text-muted">Email address</Form.Label>
-                     <Form.Control className="border-" type="email" placeholder="Enter email"/>
-                     <Form.Text className="text-muted">
-                        We'll never share your email with anyone else.
-                     </Form.Text>
-                  </Form.Group>
-
-                  <Form.Group controlId="formBasicPassword">
-                     <Form.Label className="text-muted">Password</Form.Label>
-                     <Form.Control className="border" type="password" placeholder="Password"/>
-                  </Form.Group>
-
-                  <Form.Group controlId="formBasicCheckbox">
-                     <Form.Check type="checkbox"
-                                 variant="primary"
-                                 className=""
-                                 label="Remember Me"/>
-                  </Form.Group>
-
-                  <Button variant="outline-primary" type="submit" size="md">
-                     Submit
-                  </Button>
-               </Form>
+               <LoginReduxForm onSubmit={onSubmit} />
             </section>
          </Container>
       </Container>
    )
 }
 
-export default Login
+const mapStateToProps = (state) => ({
+   isAuth: state.auth.isAuth
+})
 
-// ? <FontAwesomeIcon className="text-primary" icon={faSignInAlt} size="1x" />
-// : <FontAwesomeIcon className="text-secondary" icon={faSignOutAlt} size="1x" />
+export default connect( mapStateToProps, { login } )(Login)

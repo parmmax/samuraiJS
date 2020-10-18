@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { sendMessageCreator, updateNewMessageTextCreator, } from '../../Redux/dialogsReducer'
+import { sendMessageCreator } from '../../BLL/reducers/dialogsReducer'
 import Dialogs from './Dialogs'
 import { withAuthRedirect } from '../../hoc/withAuthRedirect'
 import { compose } from 'redux'
@@ -19,22 +19,15 @@ class DialogsContainer extends React.Component {
 
 const mapStateToProps = (state) => {
    return {
-      dialogs: state.dialogsPage.dialogs,
-      messages: state.dialogsPage.messages,
-      newTextMessage: state.dialogsPage.newMessageText,
+      dialogs: state.dialogsPage,
    }
 }
 
 const mapDispatchToProps = (dispatch) => {
    return {
-      onNewMessageChange: (newTextFromTextarea) => {
-         let action = updateNewMessageTextCreator(newTextFromTextarea)
-         dispatch(action)
-      },
-      onSendMessageClick: () => {
-         let sendMessage = sendMessageCreator()
-         dispatch(sendMessage)
-      },
+      onSendMessageClick: (addMessageBody) => {
+         dispatch (sendMessageCreator(addMessageBody))
+      }
    }
 }
 

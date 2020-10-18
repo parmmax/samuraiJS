@@ -1,22 +1,28 @@
-import React from 'react';
-// import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
-// import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react'
+import { Button, Nav } from 'react-bootstrap'
 
-// debugger;
 const Auth = (props) => {
-    return (
-        <>
-            {
-                props.isAuth
-                    ? props.login
-                    : "Sing in"
-                }
-        </>
-    )
+   return (
+      <>
+         {
+            props.isAuth
+               ? <Nav >
+                  <Nav.Link href="/profile" className="text-primary">{props.login}</Nav.Link>
+                  <Button className="border-0 mx-1"
+                          variant="outline-light"
+                          size="md"
+                          onClick={props.logout}>Logout</Button>
+               </Nav>
+               : <>
+                  <Nav.Link href="/users" className="text-primary">All Users</Nav.Link>
+                  <Button className="border-0 mx-1"
+                          variant="outline-secondary"
+                          size="md"
+                          href="/login">Login</Button>
+               </>
+         }
+      </>
+   )
 }
 
-export default Auth;
-
-// ? <FontAwesomeIcon className="text-primary" icon={faSignInAlt} size="1x" />
-// : <FontAwesomeIcon className="text-secondary" icon={faSignOutAlt} size="1x" />
+export default Auth

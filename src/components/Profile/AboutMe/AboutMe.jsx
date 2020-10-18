@@ -9,10 +9,10 @@ const AboutMe = (props) => {
    }
 
    return (
-      <Card className="mb-3  border-0 shadow bg-white">
-         <Card.Header>
-            <h4 className="text-primary font-family-secondary font-weight-bold text-center mb-0">About Me</h4>
-         </Card.Header>
+      <section className="mb-3 p-4 rounded-sm w-100">
+         <header className="border-bottom border-primary">
+            <h3 className="font-family-secondary font-weight-bold text-center mb-0">about <span className="text-primary">M</span>e</h3>
+         </header>
 
          <Card.Body>
             <>
@@ -39,7 +39,7 @@ const AboutMe = (props) => {
                }
             </>
          </Card.Body>
-      </Card>
+      </section>
    )
 }
 

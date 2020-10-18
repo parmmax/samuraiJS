@@ -1,29 +1,66 @@
 @import url("./assets/sass/themes.scss");
 
-$bg-color: #e6e6ea;
-$color: #101010;
+$bg-color: #101010;
+$color: #FFFFFF;
+
+//9Y8_YWk9uv8xCBx
 
 $theme-colors: (
-        "primary": #7303c0,
-        "secondary": #ec38bc,
-        "note": #f59bfa,
-        "info": #c55fda,
-        "link": #a22094,
+        //"primary":    #50D5B7,
+        //"secondary":  #7CFF6B,
+        //"note":       #0A8270,
+        //"info":       #067D68,
+        //"link":       #6DFC6B,
+        //"warning":    #FFEA00,
+        //"danger":     #D42F9D,
+        //"dark":       #101010,
+        //"light":      #e6e6ea,
   ////---------------
-  //      "primary": #4D226D,
-  //      "secondary": #2E3192,
-  //      "note": #8557A7,
-  //      "info": #662D91,
-  //      "link": #130F38,
+  //      "primary": #7303c0,
+  //      "secondary": #ec38bc,
+  //      "note": #f59bfa,
+  //      "info": #c55fda,
+  //      "link": #f59bfa,
+  //      "dark": #101010,
+  //      "light": #e6e6ea,
   ////---------------
-  //      "primary": #262687,
-  //      "secondary": #A43DBD,
-  //      "note": #E563A7,
-  //      "info": #F7A4B2,
-  //      "link": #FFE9EA,
+  //      "primary": linear-gradient(to right, #6C63FF, #F8A4D8),
+  //      "primary": #6C63FF,
+  //      "secondary": #F8A4D8,
+  //      "note": #c55fda,
+  //      "info": #f59bfa,
+  //      "link": #DADFEA,
+  //      "muted": #9DA6B8,
+  //      "dark": #101010, //5A6170 03001e
+  //      "light": #FFFFFF,
   ////---------------
-  //      "primary": #6610f2,
-  //      "secondary": #8e68d4,
+  //      "primary": #2286A9,
+  //      "secondary": #006ba9,
+  //      "note": #807A7A,
+  //      "info": #ef5939,
+  //      "link": #18181c,
+  //      "muted": #E2E1E6,
+  //      "dark": #101010,
+  //      "light": #e6e6ea,
+  ////---------------
+  //      "primary":    #4D226D,
+  //      "secondary":  #2E3192,
+  //      "note":       #8557A7,
+  //      "info":       #662D91,
+  //      "link":       #130F38,
+  //      "dark":       #101010,
+  //      "light":      #e6e6ea,
+  ////---------------
+        "primary":    #A43DBD,
+        "secondary":  #FFE9EA,
+        "note":       #E563A7,
+        "info":       #F7A4B2,
+        "link":       #262687,
+        "dark":       #242A38,
+        "light":      #FFFFFF,
+  ////---------------
+  //      "primary": #8e68d4,
+  //      "secondary": #ef5939,
   //      "note": #18181c,
   //      "info": #404044,
   //      "link": #ef5939,
@@ -31,10 +68,15 @@ $theme-colors: (
 
 .font-family-secondary {
   font-family: 'Great Vibes', cursive;
+  //font-family: 'Lato', sans-serif;
 }
 
-.home-bg {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 0.9) 70%),
+#basic-nav-dropdown {
+  color: $color;
+}
+
+.bg-home {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.71) 0%, rgba(0, 0, 0, 0.7) 68%),
   url("./assets/img/mountains1920x1080.jpg");
   background-attachment: fixed;
   background-position: center;
@@ -100,6 +142,10 @@ $theme-colors: (
 
   &-mango {
     background: linear-gradient(to right, #ffe259, #ffa751);
+  }
+
+  &-pasificDream {
+    background: linear-gradient(to right, #34e89e, #0f3443);
   }
 
   &-servQuick {

@@ -1,48 +1,81 @@
-import React from "react";
-import { Navbar, Nav, NavDropdown, Container, Row, Col } from 'react-bootstrap';
-import AuthContainer from "../common/Auth/AuthContainer";
+import React, { useState } from 'react'
+import {
+   Navbar,
+   Container,
+   Collapse, Button,
+} from 'react-bootstrap'
+import {
+   faFeatherAlt,
+   faBars,
+   faTimes,
+} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import CollapseNavContainer from '../common/CollapseNav/CollapseNavContainer'
+import AuthContainer from '../common/Auth/AuthContainer'
 
 const Header = (props) => {
-    return (
-        <header id="header" className="position-relative zIndex-2">
-            <Container fluid className="px-0 position-absolute">
-                <Navbar bg="transporent" >
-                    <Container>
-                        <Row>
-                            <Col>
-                                <Navbar.Brand href="/" className="lead text-primary font-weight-light font-family-secondary">
-                                    <h3>pen<span className="text-secondary">S</span>cript</h3>
-                                </Navbar.Brand>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col>
-                                <Nav className="mr-auto font-weight-normal">
-                                    <Nav.Link href="/">Home</Nav.Link>
-                                    <NavDropdown title="Documentation" id="basic-nav-dropdown" className="">
-                                        <NavDropdown.Item className="" target="_blank" href="https://social-network.samuraijs.com/">Social Network API</NavDropdown.Item>
-                                        <NavDropdown.Item className="" target="_blank" href="https://social-network.samuraijs.com/docs">Social Network API doc</NavDropdown.Item>
-                                        <NavDropdown.Divider />
-                                        <NavDropdown.Item className="" target="_blank" href="https://openweathermap.org/current#name">Open Weather API</NavDropdown.Item>
-                                        <NavDropdown.Item className="" target="_blank" href="https://openweathermap.org/faq">Open Weather FAQ</NavDropdown.Item>
-                                        <NavDropdown.Divider />
-                                        <NavDropdown.Item className="" target="_blank" href="https://reacttraining.com/">React Training</NavDropdown.Item>
-                                        <NavDropdown.Item className="" target="_blank" href="https://react-bootstrap.github.io/components/alerts">React-Bootstrap</NavDropdown.Item>
-                                        <NavDropdown.Item className="" target="_blank" href="https://bootstrap-4.ru/articles/cheatsheet/">Bootstrap Cheatsheet</NavDropdown.Item>
-                                        <NavDropdown.Item className="" target="_blank" href="https://www.youtube.com/watch?v=gb7gMluAeao&ab_channel=IT-KAMASUTRA">YouTube</NavDropdown.Item>
-                                        <NavDropdown.Item className="" target="_blank" href="https://github.com/it-kamasutra/react-way-of-samurai">GitHub</NavDropdown.Item>
-                                    </NavDropdown>
-                                    <Nav.Link href="/profile"><AuthContainer /></Nav.Link>
-                                </Nav>
-                            </Col>
-                        </Row>
-                    </Container>
-                </Navbar>
-            </Container>
-        </header>
-    );
+   const [open, setOpen] = useState(false)
+
+   let textColorCollapseOpen = ''
+   let textColorCollapseClose = 'text-muted'
+   let textColorCollapseToggle = open
+      ? textColorCollapseOpen
+      : textColorCollapseClose
+
+   let bgOpen = 'bg-dark shadow'
+   let bgClose = 'bg-transparent'
+   let bgToggle = open ? bgOpen : bgClose
+
+   let variantOpen = 'dark'
+   let variantClose = 'transparent'
+   let variantToggle = open ? variantOpen : variantClose
+
+   return (
+      <header id="header" className="position-relative zIndex-2">
+         <Container fluid className={`px-0 position-absolute  ${bgToggle}`}>
+            <Collapse in={open}>
+               <Container>
+                  <CollapseNavContainer variantToggle={variantToggle}
+                                        bgToggle={bgToggle}
+                                        textColorCollapseToggle={textColorCollapseToggle}/>
+               </Container>
+            </Collapse>
+            <Navbar bg={variantToggle}
+                    variant={variantToggle}
+                    expand="sm">
+               <Container className="d-flex flex-row">
+                  <Navbar.Brand href="/"
+                                className="pl-0 ml-0 font-weight-light font-family-secondary text-white">
+                     <h3>
+                        pen<FontAwesomeIcon
+                        className="ml-1 mr-0 p-0 text-primary"
+                        icon={faFeatherAlt} size="1x"/>
+                        script
+                     </h3>
+                  </Navbar.Brand>
+                  <div className="d-flex flex-row">
+                     <AuthContainer/>
+                     <Button
+                        onClick={() => setOpen(!open)}
+                        aria-expanded={open}
+                        aria-controls="collapse-navigation"
+                        variant="outline-primary"
+                        size="sm"
+                        className="btn btn-link bg-transparent border-0 shadow-none"
+                     >
+                        {
+                           open ? <FontAwesomeIcon icon={faTimes} size="2x"/>
+                              : <FontAwesomeIcon icon={faBars} size="2x"/>
+                        }
+                     </Button>
+                  </div>
+               </Container>
+            </Navbar>
+         </Container>
+      </header>
+   )
 }
 
-export default Header;
+export default Header
 
 

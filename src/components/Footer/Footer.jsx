@@ -6,7 +6,7 @@ const Footer = () => {
         <footer>
             <Container>
                 <article className="d-flex flex-row justify-content-between align-items-start">
-                    <Button variant="outline-primary" size="sm" href="#header">Go on top</Button>
+                    <Button variant="" size="sm" href="#header">Go on top</Button>
                 </article>
             </Container>
         </footer>
