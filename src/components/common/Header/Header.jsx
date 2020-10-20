@@ -42,7 +42,7 @@ const Header = (props) => {
             </Collapse>
             <Navbar bg={variantToggle}
                     variant={variantToggle}
-                    expand="sm">
+                    expand="md">
                <Container className="d-flex flex-row">
                   <Navbar.Brand href="/"
                                 className="pl-0 ml-0 font-weight-light font-family-secondary text-white">
