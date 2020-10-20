@@ -31,7 +31,7 @@ let initialState = {
          href: 'profile/1049',
       },
    ],
-   info: [
+   api: [
       {
          id: '7',
          title: 'Social Network API',
@@ -39,31 +39,38 @@ let initialState = {
       },
       {
          id: '8',
-         title: 'Social Network API doc',
+         title: 'Social Network API docs',
          href: 'https://social-network.samuraijs.com/docs',
       },
       {
          id: '9',
+         title: 'Social Network API docs.google',
+         href: 'https://docs.google.com/document/d/1ZSXmTzkgq_Kj1VbWuq8fTv_DPD95GFDvPZgqFeIYGoM/edit#'
+      }
+   ],
+   info: [
+      {
+         id: '10',
          title: 'React Training',
          href: 'https://reacttraining.com/',
       },
       {
-         id: '10',
+         id: '11',
          title: 'React-Bootstrap',
-         href: 'href="https://react-bootstrap.github.io/components/alerts"',
+         href: 'https://react-bootstrap.github.io/components/alerts',
       },
       {
-         id: '11',
+         id: '12',
          title: 'Bootstrap Cheatsheet',
          href: 'https://bootstrap-4.ru/articles/cheatsheet/',
       },
       {
-         id: '12',
+         id: '13',
          title: 'YouTube Channel It-Kamasutra',
          href: 'https://www.youtube.com/watch?v=gb7gMluAeao&ab_channel=IT-KAMASUTRA',
       },
       {
-         id: '13',
+         id: '14',
          title: 'GitHub - Way of Samurai',
          href: 'https://github.com/it-kamasutra/react-way-of-samurai',
       },

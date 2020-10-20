@@ -118,9 +118,9 @@
 
 // $enable-caret:                                true !default;
 // $enable-rounded:                              true !default;
-$enable-shadows:                              true ; // !default false
-$enable-gradients:                            true ;  // !default false
-// $enable-transitions:                          true !default;
+$enable-shadows:                            true; // !default false
+$enable-gradients:                          true; // !default false
+$enable-transitions:                        true; // true !default;
 // $enable-prefers-reduced-motion-media-query:   true !default;
 // $enable-hover-media-query:                    false !default; // Deprecated, no longer affects any compiled CSS
 // $enable-grid-classes:                         true !default;
@@ -154,18 +154,18 @@ $enable-gradients:                            true ;  // !default false
 // This variable affects the `.h-*` and `.w-*` classes.
 $sizes: ();
 $sizes: map-merge(
-  (
-    25v:  25vh,
-    25:   25%,
-    50v:  50vh,
-    50:   50%,
-    75v:  75vh,
-    75:   75%,
-    100:  100%,
-    100v: 100vh,
-    auto: auto
-  ),
-  $sizes
+                (
+                        25 v: 25vh,
+                        25: 25%,
+                        50 v: 50vh,
+                        50: 50%,
+                        75 v: 75vh,
+                        75: 75%,
+                        100: 100%,
+                        100 v: 100vh,
+                        auto: auto
+                ),
+                $sizes
 );
 
 
@@ -173,20 +173,20 @@ $sizes: map-merge(
 //
 // Settings for the `<body>` element.
 
-$body-bg:                   $gray-200;
-$body-color:                $gray-900;
+$body-bg: $gray-200;
+$body-color: $gray-900;
 
 
 // Links
 //
 // Style anchor elements.
 
-$link-color:                              theme-color("primary"); // !default
-$link-decoration:                         none ; // !default
-$link-hover-color:                        darken($link-color, 15%) ; // !default
-$link-hover-decoration:                   underline ; // !default
+$link-color: theme-color("primary"); // !default
+$link-decoration: none; // !default
+$link-hover-color: darken($link-color, 15%); // !default
+$link-hover-decoration: underline; // !default
 // Darken percentage for links with `.text-*` class (e.g. `.text-success`)
-$emphasized-link-hover-darken-percentage: 15% ; // !default
+$emphasized-link-hover-darken-percentage: 15%; // !default
 
 // Paragraphs
 //
@@ -243,10 +243,10 @@ $emphasized-link-hover-darken-percentage: 15% ; // !default
 // $line-height-sm:              1.5 !default;
 
 // $border-width:                1px !default;
-$border-color:                $gray-300; // !default
+$border-color: $gray-300; // !default
 
 // $border-radius:               .25rem !default;
-$border-radius-lg:            .2rem; // !default
+$border-radius-lg: .2rem; // !default
 // $border-radius-sm:            .2rem !default;
 
 // $rounded-pill:                50rem !default;
@@ -262,9 +262,13 @@ $border-radius-lg:            .2rem; // !default
 // $caret-vertical-align:        $caret-width * .85 !default;
 // $caret-spacing:               $caret-width * .85 !default;
 
-$transition-base:             all .6s ease-in-out ; // !default
-$transition-fade:             opacity .3s linear ; // !default
-$transition-collapse:         height .6s ease ; // !default
+$transition-base: all .6s ease-in-out; // !default
+$transition-fade: opacity .3s linear; // !default
+$transition-collapse: height .6s ease; // !default
+
+//$transition-base: all .0s ease-in-out; // !default
+//$transition-fade: opacity .0s linear; // !default
+//$transition-collapse: height .0s ease; // !default
 
 // $embed-responsive-aspect-ratios: () !default;
 // $embed-responsive-aspect-ratios: join(
@@ -282,10 +286,10 @@ $transition-collapse:         height .6s ease ; // !default
 // Font, line-height, and color for body text, headings, and more.
 
 // stylelint-disable value-keyword-case "Great Vibes", cursive,
-$font-family-new:             "Great Vibes" cursive;
-$font-family-sans-serif:      "-apple-system", "BlinkMacSystemFont", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
-$font-family-base:            $font-family-sans-serif;
+$font-family-new: "Great Vibes" cursive;
+$font-family-sans-serif: "-apple-system", "BlinkMacSystemFont", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base: $font-family-sans-serif;
 // stylelint-enable value-keyword-case
 
 // $font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
@@ -301,8 +305,8 @@ $font-family-base:            $font-family-sans-serif;
 // $font-weight-base:            $font-weight-normal !default;
 // $line-height-base:            1.2 !default;
 
-$h1-font-size:                $font-size-base * 3.5; // !default
-$h2-font-size:                $font-size-base * 2.5; // !default
+$h1-font-size: $font-size-base * 3.5; // !default
+$h2-font-size: $font-size-base * 2.5; // !default
 // $h3-font-size:                $font-size-base * 1.75 !default;
 // $h4-font-size:                $font-size-base * 1.5 !default;
 // $h5-font-size:                $font-size-base * 1.25 !default;
@@ -443,9 +447,9 @@ $h2-font-size:                $font-size-base * 2.5; // !default
 // $btn-box-shadow:              inset 0 1px 0 rgba($white, .15), 0 1px 1px rgba($black, .075) !default;
 // $btn-focus-width:             $input-btn-focus-width !default;
 // $btn-focus-box-shadow:        $input-btn-focus-box-shadow !default;
-$btn-box-shadow:              none !default; // my default
-$btn-focus-width:             none !default; // my default
-$btn-focus-box-shadow:        none !default; // my default
+$btn-box-shadow: none !default; // my default
+$btn-focus-width: none !default; // my default
+$btn-focus-box-shadow: none !default; // my default
 // $btn-disabled-opacity:        .65 !default;
 // $btn-active-box-shadow:       inset 0 3px 5px rgba($black, .125) !default;
 
@@ -454,14 +458,14 @@ $btn-focus-box-shadow:        none !default; // my default
 // $btn-block-spacing-y:         .5rem !default;
 
 // Allows for customizing button radius independently from global border radius
-$btn-border-radius:           $border-radius; // !default
-$btn-border-radius-lg:        $border-radius-lg; // !default
-$btn-border-radius-sm:        $border-radius-sm; // !default
+$btn-border-radius: $border-radius; // !default
+$btn-border-radius-lg: $border-radius-lg; // !default
+$btn-border-radius-sm: $border-radius-sm; // !default
 
-$btn-transition:              color .35s ease-in-out, 
-                              background-color .35s ease-in-out, 
-                              border-color .35s ease-in-out, 
-                              box-shadow .35s ease-in-out; // !default
+$btn-transition: color .35s ease-in-out,
+background-color .35s ease-in-out,
+border-color .35s ease-in-out,
+box-shadow .35s ease-in-out; // !default
 
 
 // Forms
@@ -516,7 +520,7 @@ $btn-transition:              color .35s ease-in-out,
 // $input-height-sm:                       add($input-line-height-sm * 1em, add($input-padding-y-sm * 2, $input-height-border, false)) !default;
 // $input-height-lg:                       add($input-line-height-lg * 1em, add($input-padding-y-lg * 2, $input-height-border, false)) !default;
 
-$input-transition:                      border-color .35s ease-in-out, box-shadow .35s ease-in-out ; // !default .15s
+$input-transition: border-color .35s ease-in-out, box-shadow .35s ease-in-out; // !default .15s
 
 // $form-text-margin-top:                  .25rem !default;
 
@@ -534,7 +538,7 @@ $input-transition:                      border-color .35s ease-in-out, box-shado
 // $input-group-addon-bg:                  $gray-200 !default;
 // $input-group-addon-border-color:        $input-border-color !default;
 
-$custom-forms-transition:               background-color .35s ease-in-out, border-color .35s ease-in-out, box-shadow .35s ease-in-out ; // !default .15s
+$custom-forms-transition: background-color .35s ease-in-out, border-color .35s ease-in-out, box-shadow .35s ease-in-out; // !default .15s
 
 // $custom-control-gutter:                 .5rem !default;
 // $custom-control-spacer-x:               1rem !default;
@@ -844,7 +848,7 @@ $custom-forms-transition:               background-color .35s ease-in-out, borde
 // $card-spacer-x:                     1.25rem !default;
 // $card-border-width:                 $border-width !default;
 // $card-border-radius:                $border-radius !default;
-$card-border-color:                 rgba($black, .225) ; // !default
+$card-border-color: rgba($black, .225); // !default
 // $card-inner-border-radius:          subtract($card-border-radius, $card-border-width) !default;
 // $card-cap-bg:                       rgba($black, .03) !default;
 // $card-cap-color:                    null !default;

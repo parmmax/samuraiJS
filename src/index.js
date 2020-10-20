@@ -1,5 +1,5 @@
 import * as serviceWorker from './serviceWorker';
-import store from "./BLL/reducers/store";
+import store from "./bll/reducers/store";
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from "react-router-dom";

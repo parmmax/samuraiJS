@@ -10,8 +10,8 @@ import {
    faTimes,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import CollapseNavContainer from '../common/CollapseNav/CollapseNavContainer'
-import AuthContainer from '../common/Auth/AuthContainer'
+import CollapseNavContainer from './CollapseNav/CollapseNavContainer'
+import AuthContainer from '../Auth/AuthContainer'
 
 const Header = (props) => {
    const [open, setOpen] = useState(false)
@@ -57,6 +57,7 @@ const Header = (props) => {
                      <AuthContainer/>
                      <Button
                         onClick={() => setOpen(!open)}
+                        onBlur={() => setOpen(!open)}
                         aria-expanded={open}
                         aria-controls="collapse-navigation"
                         variant="outline-primary"

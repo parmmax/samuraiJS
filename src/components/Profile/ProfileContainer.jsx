@@ -5,7 +5,7 @@ import {
    getProfile,
    getStatus,
    setUserProfile, updateStatus,
-} from '../../BLL/reducers/profileReducer'
+} from '../../bll/reducers/profileReducer'
 import Profile from './Profile'
 import { withAuthRedirect } from '../../hoc/withAuthRedirect'
 import { compose } from 'redux'

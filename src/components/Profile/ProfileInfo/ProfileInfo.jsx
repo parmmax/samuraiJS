@@ -1,9 +1,9 @@
-import React from 'react';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Button, Card } from 'react-bootstrap';
-import PreLoader from '../../common/PreLoader/PreLoader';
-import ProfileStatus from './ProfileStatus/ProfileStatus';
+import React from 'react'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Button, Card } from 'react-bootstrap'
+import PreLoader from '../../common/PreLoader/PreLoader'
+import HooksStatus from './Status/HooksStatus'
 
 const ProfileInfo = (props) => {
 
@@ -23,8 +23,8 @@ const ProfileInfo = (props) => {
                </div>
                 <Card.Title className="mb-1 text-capitalize">{props.profile.fullName}</Card.Title>
                <div>
-                  <ProfileStatus status={props.status}
-                                 updateStatus={props.updateStatus} />
+                  {/*<ClassStatus status={props.status} updateStatus={props.updateStatus} />*/}
+                  <HooksStatus status={props.status} updateStatus={props.updateStatus} />
                </div>
             </Card.Body>
             <Card.Footer className="font-italic font-weight-light border-0 bg-transparent">

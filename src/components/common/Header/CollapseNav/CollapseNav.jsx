@@ -16,6 +16,17 @@ export const CollapseNav = (props) => {
       </Nav.Link>
    )
 
+   let apiLinks = props.links.api.map(n =>
+      <Nav.Link key={n.id}
+                id={n.id}
+                href={n.href}
+                className={linksClassNames}
+
+      >
+         <small>{n.title}</small>
+      </Nav.Link>
+   )
+
    let infoLinks = props.links.info.map(i =>
       <Nav.Link key={i.id}
                 id={i.id}
@@ -33,8 +44,12 @@ export const CollapseNav = (props) => {
               expand="sm"
               className="p-0 pt-1 align-items-start">
          <Nav className="p-0 flex-column w-100">
-            <small className="text-muted mb-3">Profile Info</small>
+            <small className="text-muted mb-3">Personal Info</small>
             {navLinks}
+         </Nav>
+         <Nav className="p-0 flex-column w-100">
+            <small className="text-muted mb-3">API Info</small>
+            {apiLinks}
          </Nav>
          <Nav className="p-0 flex-column w-100">
             <small className="text-muted mb-3">Supporting Info</small>

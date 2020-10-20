@@ -6,8 +6,8 @@ import {
    getFollowThunk,
    getUnFollowThunk, getUsersThunk,
 
-} from '../../BLL/reducers/usersReducer'
-import { setActivePage } from '../../BLL/reducers/paginationReducer'
+} from '../../bll/reducers/usersReducer'
+import { setActivePage } from '../../bll/reducers/paginationReducer'
 import Users from './Users'
 import { compose } from 'redux'
 import {
@@ -17,7 +17,7 @@ import {
    getIsFetching,
    getTotalCount,
    getUsers
-} from '../../BLL/selectors/usersSelectors'
+} from '../../bll/selectors/usersSelectors'
 
 class UsersContainer extends React.Component {
 

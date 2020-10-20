@@ -1,6 +1,6 @@
 import React from 'react'
 import Auth from './Auth'
-import { logout } from '../../../BLL/reducers/authReducer'
+import { logout } from '../../../bll/reducers/authReducer'
 import { connect } from 'react-redux'
 
 class AuthContainer extends React.Component {

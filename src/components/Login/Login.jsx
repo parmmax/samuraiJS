@@ -2,7 +2,7 @@ import React from 'react'
 import { Container } from 'react-bootstrap'
 import LoginReduxForm from './LoginForm'
 import { connect } from 'react-redux'
-import { login } from '../../BLL/reducers/authReducer'
+import { login } from '../../bll/reducers/authReducer'
 import { Redirect } from 'react-router-dom'
 
 const Login = (props) => {

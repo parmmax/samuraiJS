@@ -1,7 +1,7 @@
 import React from 'react'
 import { InputGroup, FormControl } from 'react-bootstrap'
 
-class ProfileStatus extends React.Component {
+class ClassStatus extends React.Component {
 
    state = {
       editMode: false,
@@ -75,4 +75,4 @@ class ProfileStatus extends React.Component {
    }
 }
 
-export default ProfileStatus
+export default ClassStatus
